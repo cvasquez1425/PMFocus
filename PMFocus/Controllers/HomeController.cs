@@ -14,7 +14,7 @@ namespace PMFocus.Controllers
     {
         private static PMEntities _ctx = new PMEntities();
 
-        // Display Stakeholder Grid View to Select Project Name test
+        // Display Stakeholder Grid View to Select Project Name Sync button does not work thru VS 2013
         public ActionResult searchStakeholder(string searchTerm)
         {
             int searchterm = int.Parse(searchTerm);

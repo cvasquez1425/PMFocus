@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3DED5B08-E6FD-41FB-886C-D89BC8D2FDF1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ProjectModel.DomainClasses</RootNamespace>
+    <AssemblyName>ProjectModel.DomainClasses</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PMFocus, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\PMFocus\bin\PMFocus.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\PMFocus\bin\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="closing.cs">
+      <DependentUpon>PMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="cost.cs">
+      <DependentUpon>PMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dept.cs">
+      <DependentUpon>PMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EscrowMethod.cs">
+      <DependentUpon>PMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="holiday_schedule.cs">
+      <DependentUpon>PMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="issue_severity.cs">
+      <DependentUpon>PMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="issue_type.cs">
+      <DependentUpon>PMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PartialClasses\dept.cs" />
+    <Compile Include="PartialClasses\deptMetadata.cs" />
+    <Compile Include="PartialClasses\proj_mgr.cs" />
+    <Compile Include="PartialClasses\proj_sponsor.cs" />
+    <Compile Include="PartialClasses\proj_status.cs" />
+    <Compile Include="PartialClasses\proj_statusMetaData.cs" />
+    <Compile Include="PartialClasses\proj_type.cs" />
+    <Compile Include="PartialClasses\proj_typeMetadata.cs" />
+    <Compile Include="PartialClasses\stakeholder.cs" />
+    <Compile Include="PartialClasses\stakeholderMetadata.cs" />
+    <Compile Include="PMModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proj_activity.cs">
+      <DependentUpon>PMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proj_activity_resource.cs">
+      <DependentUpon>PMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proj_cost.cs">
+      <DependentUpon>PMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proj_info.cs">
+      <DependentUpon>PMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proj_infoViewModel.cs" />
+    <Compile Include="proj_issues.cs">
+      <DependentUpon>PMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proj_log.cs">
+      <DependentUpon>PMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proj_logViewModel.cs" />
+    <Compile Include="proj_log_code.cs">
+      <DependentUpon>PMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proj_mgr.cs">
+      <DependentUpon>PMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proj_sponsor.cs">
+      <DependentUpon>PMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proj_stakeholder.cs">
+      <DependentUpon>PMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proj_status.cs">
+      <DependentUpon>PMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proj_type.cs">
+      <DependentUpon>PMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proj_wbs.cs">
+      <DependentUpon>PMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="resource.cs">
+      <DependentUpon>PMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="resource_avail.cs">
+      <DependentUpon>PMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="response_type.cs">
+      <DependentUpon>PMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="risk_category.cs">
+      <DependentUpon>PMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="risk_impact.cs">
+      <DependentUpon>PMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="risk_objective.cs">
+      <DependentUpon>PMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="risk_probability.cs">
+      <DependentUpon>PMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="risk_register.cs">
+      <DependentUpon>PMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="risk_status.cs">
+      <DependentUpon>PMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="search_Info.cs">
+      <DependentUpon>PMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="stakeholder.cs">
+      <DependentUpon>PMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="stakeholderViewModel.cs" />
+    <Compile Include="unavail_type.cs">
+      <DependentUpon>PMModel.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="PMModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>PMModel.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

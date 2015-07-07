@@ -1,0 +1,39 @@
+﻿@model IEnumerable<ProjectModel.DomainClasses.proj_info>
+
+@{
+    Layout = "~/Views/Shared/_LayoutStatus.cshtml";
+    var bydepartment = ViewData["byDepartment"];
+}
+
+<p class="gridHeader">
+    By @bydepartment
+</p>
+@*@section gridStatus{
+    We are showing the Grid Status for testing purposes.
+}*@
+
+<div id="gridDepartment">
+    @{
+        var grid = new WebGrid(Model, defaultSort: "proj_name", rowsPerPage: 25);
+    }
+
+    @{
+        @grid.GetHtml(
+            tableStyle: "webGrid",
+            headerStyle: "header",
+            alternatingRowStyle: "alt",
+            selectedRowStyle: "select",
+            columns: grid.Columns(
+            grid.Column("proj_name", header: "Project Name", format: @<text>@Html.ActionLink((string)item.proj_name, "index", "Home", new { searchTerm = item.proj_name }, null)</text>),
+            grid.Column("charter", header: "Charter Approved"),
+            grid.Column("scope_definition", header: "Scope"),
+            grid.Column("proj_start_date", header: "Start Date"),
+            grid.Column("proj_end_date", header: "End Date"),
+            grid.Column("notes", header: "Note"),
+            grid.Column("proj_goal", header: "Project Goal"),
+            grid.Column("doc_location", header: "Location of PM Documents")
+            )
+        )
+    }
+</div>
+

@@ -1,0 +1,91 @@
+﻿@model ProjectModel.DomainClasses.stakeholderViewModel
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    
+    <table class="class">
+        <caption></caption>
+        <tr>
+            <td>StakeHolder ID:
+            </td>
+            <td class="alt">
+                @Html.DropDownListFor(model => model._stakeholder_id, Model.stakeholderFullNameItems, new { @class = "dropdownButton" })
+                @Html.ValidationMessageFor(model => model._stakeholder_id)
+            </td>
+        </tr>
+        <tr>
+            <td>First Name:
+            </td>
+            <td class="alt">
+                @Html.EditorFor(model => model._stakeholder_first_name)
+                @Html.ValidationMessageFor(model => model._stakeholder_first_name)
+            </td>
+        </tr>
+        <tr>
+            <td>Last Name:
+            </td>
+            <td class="alt">
+                @Html.EditorFor(model => model._stakeholder_last_name)
+                @Html.ValidationMessageFor(model => model._stakeholder_last_name)
+            </td>
+        </tr>
+        <tr>
+            <td>DayTime Number:
+            </td>
+            <td class="alt">
+                @Html.EditorFor(model => model._stakeholder_phone)
+                @Html.ValidationMessageFor(model => model._stakeholder_phone)
+            </td>
+        </tr>
+        <tr>
+            <td>Extension:
+            </td>
+            <td class="alt">
+                @Html.EditorFor(model => model._stakeholder_gm_ext)
+                @Html.ValidationMessageFor(model => model._stakeholder_gm_ext)
+            </td>
+        </tr>
+        <tr>
+            <td>Email:
+            </td>
+            <td class="alt">
+                @Html.EditorFor(model => model._stakeholder_email)
+                @Html.ValidationMessageFor(model => model._stakeholder_email)
+            </td>
+        </tr>
+        <tr>
+            <td>Notes:
+            </td>
+            <td class="alt">
+                @Html.TextAreaFor(model => model._notes)
+                @Html.ValidationMessageFor(model => model._notes)
+            </td>
+        </tr>
+        <tr>
+            <td>Created By:
+            </td>
+            <td class="alt">
+                @Html.EditorFor(model => model._createdby)
+                @Html.ValidationMessageFor(model => model._createdby)
+            </td>
+        </tr>
+        <tr>
+            <td>Created Date:
+            </td>
+            <td class="alt">
+                @Html.EditorFor(model => model._createddate)
+                @Html.ValidationMessageFor(model => model._createddate)
+            </td>
+        </tr>
+        <tr style="text-align: center">
+            <td class="alt">
+                <input type="submit" value="Create" id="sbmCreate"/>&nbsp;&nbsp;
+            </td>
+            <td class="alt">
+                <input type="button" value="Cancel" id="btncancelStakeholder" />
+            </td>
+        </tr>
+    </table>
+}

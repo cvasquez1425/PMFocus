@@ -1,0 +1,163 @@
+﻿@model ProjectModel.DomainClasses.proj_info
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>proj_info</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.proj_info_id)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.proj_info_id)
+            @Html.ValidationMessageFor(model => model.proj_info_id)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.proj_name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.proj_name)
+            @Html.ValidationMessageFor(model => model.proj_name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.proj_mgr_id)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.proj_mgr_id)
+            @Html.ValidationMessageFor(model => model.proj_mgr_id)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.proj_sponsor_id)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.proj_sponsor_id)
+            @Html.ValidationMessageFor(model => model.proj_sponsor_id)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.charter)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.charter)
+            @Html.ValidationMessageFor(model => model.charter)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.scope_definition)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.scope_definition)
+            @Html.ValidationMessageFor(model => model.scope_definition)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.dept_id)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.dept_id)
+            @Html.ValidationMessageFor(model => model.dept_id)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.client)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.client)
+            @Html.ValidationMessageFor(model => model.client)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.proj_start_date)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.proj_start_date)
+            @Html.ValidationMessageFor(model => model.proj_start_date)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.proj_end_date)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.proj_end_date)
+            @Html.ValidationMessageFor(model => model.proj_end_date)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.proj_status_id)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.proj_status_id)
+            @Html.ValidationMessageFor(model => model.proj_status_id)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.project_type_id)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.project_type_id)
+            @Html.ValidationMessageFor(model => model.project_type_id)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.createdby)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.createdby)
+            @Html.ValidationMessageFor(model => model.createdby)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.createddate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.createddate)
+            @Html.ValidationMessageFor(model => model.createddate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.notes)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.notes)
+            @Html.ValidationMessageFor(model => model.notes)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.proj_goal)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.proj_goal)
+            @Html.ValidationMessageFor(model => model.proj_goal)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.doc_location)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.doc_location)
+            @Html.ValidationMessageFor(model => model.doc_location)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,2236 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="PM_FocusModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="PM_FocusModelStoreContainer">
+          <EntitySet Name="closing" EntityType="PM_FocusModel.Store.closing" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="cost" EntityType="PM_FocusModel.Store.cost" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="dept" EntityType="PM_FocusModel.Store.dept" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="holiday_schedule" EntityType="PM_FocusModel.Store.holiday_schedule" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="issue_severity" EntityType="PM_FocusModel.Store.issue_severity" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="issue_type" EntityType="PM_FocusModel.Store.issue_type" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="proj_activity" EntityType="PM_FocusModel.Store.proj_activity" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="proj_activity_resource" EntityType="PM_FocusModel.Store.proj_activity_resource" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="proj_cost" EntityType="PM_FocusModel.Store.proj_cost" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="proj_info" EntityType="PM_FocusModel.Store.proj_info" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="proj_issues" EntityType="PM_FocusModel.Store.proj_issues" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="proj_log" EntityType="PM_FocusModel.Store.proj_log" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="proj_log_code" EntityType="PM_FocusModel.Store.proj_log_code" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="proj_mgr" EntityType="PM_FocusModel.Store.proj_mgr" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="proj_sponsor" EntityType="PM_FocusModel.Store.proj_sponsor" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="proj_stakeholder" EntityType="PM_FocusModel.Store.proj_stakeholder" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="proj_status" EntityType="PM_FocusModel.Store.proj_status" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="proj_type" EntityType="PM_FocusModel.Store.proj_type" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="proj_wbs" EntityType="PM_FocusModel.Store.proj_wbs" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="resource" EntityType="PM_FocusModel.Store.resource" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="resource_avail" EntityType="PM_FocusModel.Store.resource_avail" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="response_type" EntityType="PM_FocusModel.Store.response_type" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="risk_category" EntityType="PM_FocusModel.Store.risk_category" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="risk_impact" EntityType="PM_FocusModel.Store.risk_impact" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="risk_objective" EntityType="PM_FocusModel.Store.risk_objective" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="risk_probability" EntityType="PM_FocusModel.Store.risk_probability" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="risk_register" EntityType="PM_FocusModel.Store.risk_register" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="risk_status" EntityType="PM_FocusModel.Store.risk_status" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="search_Info" EntityType="PM_FocusModel.Store.search_Info" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="stakeholder" EntityType="PM_FocusModel.Store.stakeholder" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="unavail_type" EntityType="PM_FocusModel.Store.unavail_type" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_closing_proj_info" Association="PM_FocusModel.Store.FK_closing_proj_info">
+            <End Role="proj_info" EntitySet="proj_info" />
+            <End Role="closing" EntitySet="closing" />
+          </AssociationSet>
+          <AssociationSet Name="FK_proj_activity_proj_wbs" Association="PM_FocusModel.Store.FK_proj_activity_proj_wbs">
+            <End Role="proj_wbs" EntitySet="proj_wbs" />
+            <End Role="proj_activity" EntitySet="proj_activity" />
+          </AssociationSet>
+          <AssociationSet Name="FK_proj_activity_resource_activity" Association="PM_FocusModel.Store.FK_proj_activity_resource_activity">
+            <End Role="proj_activity" EntitySet="proj_activity" />
+            <End Role="proj_activity_resource" EntitySet="proj_activity_resource" />
+          </AssociationSet>
+          <AssociationSet Name="FK_proj_activity_resource_resource" Association="PM_FocusModel.Store.FK_proj_activity_resource_resource">
+            <End Role="resource" EntitySet="resource" />
+            <End Role="proj_activity_resource" EntitySet="proj_activity_resource" />
+          </AssociationSet>
+          <AssociationSet Name="FK_proj_cost_cost" Association="PM_FocusModel.Store.FK_proj_cost_cost">
+            <End Role="cost" EntitySet="cost" />
+            <End Role="proj_cost" EntitySet="proj_cost" />
+          </AssociationSet>
+          <AssociationSet Name="FK_proj_cost_proj_info" Association="PM_FocusModel.Store.FK_proj_cost_proj_info">
+            <End Role="proj_info" EntitySet="proj_info" />
+            <End Role="proj_cost" EntitySet="proj_cost" />
+          </AssociationSet>
+          <AssociationSet Name="FK_proj_info_dept" Association="PM_FocusModel.Store.FK_proj_info_dept">
+            <End Role="dept" EntitySet="dept" />
+            <End Role="proj_info" EntitySet="proj_info" />
+          </AssociationSet>
+          <AssociationSet Name="FK_proj_info_proj_info" Association="PM_FocusModel.Store.FK_proj_info_proj_info">
+            <End Role="proj_info" EntitySet="proj_info" />
+            <End Role="proj_info1" EntitySet="proj_info" />
+          </AssociationSet>
+          <AssociationSet Name="FK_proj_info_proj_mgr" Association="PM_FocusModel.Store.FK_proj_info_proj_mgr">
+            <End Role="proj_mgr" EntitySet="proj_mgr" />
+            <End Role="proj_info" EntitySet="proj_info" />
+          </AssociationSet>
+          <AssociationSet Name="FK_proj_info_proj_sponsor" Association="PM_FocusModel.Store.FK_proj_info_proj_sponsor">
+            <End Role="proj_sponsor" EntitySet="proj_sponsor" />
+            <End Role="proj_info" EntitySet="proj_info" />
+          </AssociationSet>
+          <AssociationSet Name="FK_proj_info_proj_status" Association="PM_FocusModel.Store.FK_proj_info_proj_status">
+            <End Role="proj_status" EntitySet="proj_status" />
+            <End Role="proj_info" EntitySet="proj_info" />
+          </AssociationSet>
+          <AssociationSet Name="FK_proj_info_project_type" Association="PM_FocusModel.Store.FK_proj_info_project_type">
+            <End Role="proj_type" EntitySet="proj_type" />
+            <End Role="proj_info" EntitySet="proj_info" />
+          </AssociationSet>
+          <AssociationSet Name="FK_proj_issues_issue_severity" Association="PM_FocusModel.Store.FK_proj_issues_issue_severity">
+            <End Role="issue_severity" EntitySet="issue_severity" />
+            <End Role="proj_issues" EntitySet="proj_issues" />
+          </AssociationSet>
+          <AssociationSet Name="FK_proj_issues_issue_type" Association="PM_FocusModel.Store.FK_proj_issues_issue_type">
+            <End Role="issue_type" EntitySet="issue_type" />
+            <End Role="proj_issues" EntitySet="proj_issues" />
+          </AssociationSet>
+          <AssociationSet Name="FK_proj_issues_proj_info" Association="PM_FocusModel.Store.FK_proj_issues_proj_info">
+            <End Role="proj_info" EntitySet="proj_info" />
+            <End Role="proj_issues" EntitySet="proj_issues" />
+          </AssociationSet>
+          <AssociationSet Name="FK_proj_log_proj_info" Association="PM_FocusModel.Store.FK_proj_log_proj_info">
+            <End Role="proj_info" EntitySet="proj_info" />
+            <End Role="proj_log" EntitySet="proj_log" />
+          </AssociationSet>
+          <AssociationSet Name="FK_proj_log_proj_log_code" Association="PM_FocusModel.Store.FK_proj_log_proj_log_code">
+            <End Role="proj_log_code" EntitySet="proj_log_code" />
+            <End Role="proj_log" EntitySet="proj_log" />
+          </AssociationSet>
+          <AssociationSet Name="FK_proj_stakeholder_proj_info" Association="PM_FocusModel.Store.FK_proj_stakeholder_proj_info">
+            <End Role="proj_info" EntitySet="proj_info" />
+            <End Role="proj_stakeholder" EntitySet="proj_stakeholder" />
+          </AssociationSet>
+          <AssociationSet Name="FK_proj_stakeholder_stakeholder" Association="PM_FocusModel.Store.FK_proj_stakeholder_stakeholder">
+            <End Role="stakeholder" EntitySet="stakeholder" />
+            <End Role="proj_stakeholder" EntitySet="proj_stakeholder" />
+          </AssociationSet>
+          <AssociationSet Name="FK_proj_wbs_proj_info" Association="PM_FocusModel.Store.FK_proj_wbs_proj_info">
+            <End Role="proj_info" EntitySet="proj_info" />
+            <End Role="proj_wbs" EntitySet="proj_wbs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_resource_avail_resource1" Association="PM_FocusModel.Store.FK_resource_avail_resource1">
+            <End Role="resource" EntitySet="resource" />
+            <End Role="resource_avail" EntitySet="resource_avail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_resource_avail_unavail_type" Association="PM_FocusModel.Store.FK_resource_avail_unavail_type">
+            <End Role="unavail_type" EntitySet="unavail_type" />
+            <End Role="resource_avail" EntitySet="resource_avail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_risk_register_proj_info" Association="PM_FocusModel.Store.FK_risk_register_proj_info">
+            <End Role="proj_info" EntitySet="proj_info" />
+            <End Role="risk_register" EntitySet="risk_register" />
+          </AssociationSet>
+          <AssociationSet Name="FK_risk_register_response_type" Association="PM_FocusModel.Store.FK_risk_register_response_type">
+            <End Role="response_type" EntitySet="response_type" />
+            <End Role="risk_register" EntitySet="risk_register" />
+          </AssociationSet>
+          <AssociationSet Name="FK_risk_register_risk_category" Association="PM_FocusModel.Store.FK_risk_register_risk_category">
+            <End Role="risk_category" EntitySet="risk_category" />
+            <End Role="risk_register" EntitySet="risk_register" />
+          </AssociationSet>
+          <AssociationSet Name="FK_risk_register_risk_impact" Association="PM_FocusModel.Store.FK_risk_register_risk_impact">
+            <End Role="risk_impact" EntitySet="risk_impact" />
+            <End Role="risk_register" EntitySet="risk_register" />
+          </AssociationSet>
+          <AssociationSet Name="FK_risk_register_risk_objective" Association="PM_FocusModel.Store.FK_risk_register_risk_objective">
+            <End Role="risk_objective" EntitySet="risk_objective" />
+            <End Role="risk_register" EntitySet="risk_register" />
+          </AssociationSet>
+          <AssociationSet Name="FK_risk_register_risk_probability" Association="PM_FocusModel.Store.FK_risk_register_risk_probability">
+            <End Role="risk_probability" EntitySet="risk_probability" />
+            <End Role="risk_register" EntitySet="risk_register" />
+          </AssociationSet>
+          <AssociationSet Name="FK_risk_register_risk_status" Association="PM_FocusModel.Store.FK_risk_register_risk_status">
+            <End Role="risk_status" EntitySet="risk_status" />
+            <End Role="risk_register" EntitySet="risk_register" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="closing">
+          <Key>
+            <PropertyRef Name="proj_close_id" />
+          </Key>
+          <Property Name="proj_close_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="final_reports_run" Type="bit" Nullable="false" />
+          <Property Name="product_delivered" Type="bit" Nullable="false" />
+          <Property Name="contracts_closed" Type="bit" Nullable="false" />
+          <Property Name="project_team_released" Type="bit" Nullable="false" />
+          <Property Name="lessons_learned" Type="varchar" Nullable="false" MaxLength="4000" />
+          <Property Name="proj_info_id" Type="int" Nullable="false" />
+          <Property Name="createdby" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="createddate" Type="datetime" Nullable="false" />
+          <Property Name="sponsor_approval" Type="bit" Nullable="false" />
+          <Property Name="notes" Type="nvarchar" MaxLength="1000" />
+        </EntityType>
+        <EntityType Name="cost">
+          <Key>
+            <PropertyRef Name="cost_id" />
+          </Key>
+          <Property Name="cost_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="cost_name" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="createdby" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="createddate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="dept">
+          <Key>
+            <PropertyRef Name="dept_id" />
+          </Key>
+          <Property Name="dept_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="dept_desc" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="createdby" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="createddate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="holiday_schedule">
+          <Key>
+            <PropertyRef Name="holiday_sched_id" />
+          </Key>
+          <Property Name="holiday_sched_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="holiday_name" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="holiday_start_date" Type="datetime" Nullable="false" />
+          <Property Name="holiday_end_date" Type="datetime" Nullable="false" />
+          <Property Name="createdby" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="createddate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="issue_severity">
+          <Key>
+            <PropertyRef Name="issue_severity_id" />
+          </Key>
+          <Property Name="issue_severity_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="issue_severity_desc" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="createdby" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="createddate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="issue_type">
+          <Key>
+            <PropertyRef Name="issue_type_id" />
+          </Key>
+          <Property Name="issue_type_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="issue_type_desc" Type="varchar" Nullable="false" MaxLength="25" />
+          <Property Name="createdby" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="createddate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="proj_activity">
+          <Key>
+            <PropertyRef Name="proj_activity_id" />
+          </Key>
+          <Property Name="proj_activity_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="proj_wbs_id" Type="int" Nullable="false" />
+          <Property Name="proj_activity_desc" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="proj_activity_start_date" Type="datetime" Nullable="false" />
+          <Property Name="proj_activity_end_date" Type="datetime" />
+          <Property Name="sequence" Type="int" />
+          <Property Name="predecessor" Type="int" />
+          <Property Name="createdby" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="createddate" Type="datetime" Nullable="false" />
+          <Property Name="notes" Type="varchar" MaxLength="2000" />
+          <Property Name="Duration_Days" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="proj_activity_resource">
+          <Key>
+            <PropertyRef Name="proj_activity_resource_id" />
+          </Key>
+          <Property Name="proj_activity_resource_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="proj_activitiy_id" Type="int" Nullable="false" />
+          <Property Name="resource_id" Type="int" Nullable="false" />
+          <Property Name="resource_avail_pct" Type="numeric" Precision="3" Scale="2" />
+          <Property Name="createdby" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="createddate" Type="datetime" Nullable="false" />
+          <Property Name="notes" Type="varchar" MaxLength="2000" />
+        </EntityType>
+        <EntityType Name="proj_cost">
+          <Key>
+            <PropertyRef Name="proj_cost_id" />
+          </Key>
+          <Property Name="proj_cost_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="cost_id" Type="int" Nullable="false" />
+          <Property Name="proj_info_id" Type="int" Nullable="false" />
+          <Property Name="amount" Type="numeric" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="createdby" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="createddate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="proj_info">
+          <Key>
+            <PropertyRef Name="proj_info_id" />
+          </Key>
+          <Property Name="proj_info_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="proj_name" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="proj_mgr_id" Type="int" Nullable="false" />
+          <Property Name="proj_sponsor_id" Type="int" Nullable="false" />
+          <Property Name="charter" Type="bit" />
+          <Property Name="scope_definition" Type="varchar" MaxLength="2000" />
+          <Property Name="dept_id" Type="int" />
+          <Property Name="client" Type="varchar" MaxLength="50" />
+          <Property Name="proj_start_date" Type="datetime" Nullable="false" />
+          <Property Name="proj_end_date" Type="datetime" />
+          <Property Name="proj_status_id" Type="int" Nullable="false" />
+          <Property Name="project_type_id" Type="int" Nullable="false" />
+          <Property Name="createdby" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="createddate" Type="datetime" Nullable="false" />
+          <Property Name="notes" Type="varchar" MaxLength="2000" />
+          <Property Name="proj_goal" Type="varchar" Nullable="false" MaxLength="1000" />
+          <Property Name="doc_location" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="proj_issues">
+          <Key>
+            <PropertyRef Name="proj_issue_id" />
+          </Key>
+          <Property Name="proj_issue_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="proj_info_id" Type="int" Nullable="false" />
+          <Property Name="issue_type_id" Type="int" Nullable="false" />
+          <Property Name="comments" Type="varchar" Nullable="false" MaxLength="1000" />
+          <Property Name="createdby" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="createddate" Type="datetime" Nullable="false" />
+          <Property Name="issue_severity_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="proj_log">
+          <Key>
+            <PropertyRef Name="proj_log_id" />
+          </Key>
+          <Property Name="proj_log_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="proj_info_id" Type="int" Nullable="false" />
+          <Property Name="proj_log_code_id" Type="int" Nullable="false" />
+          <Property Name="action_from" Type="varchar" MaxLength="20" />
+          <Property Name="action_to" Type="varchar" MaxLength="20" />
+          <Property Name="comments" Type="varchar" MaxLength="500" />
+          <Property Name="createdby" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="createddate" Type="datetime" Nullable="false" />
+          <Property Name="action_date_from" Type="datetime" />
+          <Property Name="action_date_to" Type="datetime" />
+        </EntityType>
+        <EntityType Name="proj_log_code">
+          <Key>
+            <PropertyRef Name="proj_log_code_id" />
+          </Key>
+          <Property Name="proj_log_code_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="proj_log_code_desc" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="is_auto" Type="bit" Nullable="false" />
+          <Property Name="is_comments_required" Type="bit" Nullable="false" />
+          <Property Name="is_active" Type="bit" Nullable="false" />
+          <Property Name="createdby" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="createddate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="proj_mgr">
+          <Key>
+            <PropertyRef Name="proj_mgr_id" />
+          </Key>
+          <Property Name="proj_mgr_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="proj_mgr_first_name" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="proj_mgr_last_name" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="proj_mgr_phone" Type="varchar" MaxLength="15" />
+          <Property Name="proj_mgr_gm_ext" Type="int" />
+          <Property Name="proj_mgr_email" Type="varchar" MaxLength="50" />
+          <Property Name="createdby" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="createddate" Type="datetime" Nullable="false" />
+          <Property Name="full_name" Type="varchar" MaxLength="41" />
+        </EntityType>
+        <EntityType Name="proj_sponsor">
+          <Key>
+            <PropertyRef Name="proj_sponsor_id" />
+          </Key>
+          <Property Name="proj_sponsor_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="proj_sponsor_first_name" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="proj_sponsor_last_name" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="proj_sponsor_phone" Type="varchar" MaxLength="15" />
+          <Property Name="proj_sponsor_gm_ext" Type="int" />
+          <Property Name="proj_sponsor_email" Type="varchar" MaxLength="50" />
+          <Property Name="createdby" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="createddate" Type="datetime" Nullable="false" />
+          <Property Name="full_name" Type="varchar" MaxLength="41" />
+        </EntityType>
+        <EntityType Name="proj_stakeholder">
+          <Key>
+            <PropertyRef Name="proj_stakeholder_id" />
+          </Key>
+          <Property Name="proj_stakeholder_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="proj_info_id" Type="int" Nullable="false" />
+          <Property Name="stakeholder_id" Type="int" Nullable="false" />
+          <Property Name="createdby" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="createddate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="proj_status">
+          <Key>
+            <PropertyRef Name="proj_status_id" />
+          </Key>
+          <Property Name="proj_status_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="proj_status_desc" Type="varchar" Nullable="false" MaxLength="15" />
+          <Property Name="createdby" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="createddate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="proj_type">
+          <Key>
+            <PropertyRef Name="project_type_id" />
+          </Key>
+          <Property Name="project_type_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="project_type_name" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="createdby" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="createddate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="proj_wbs">
+          <Key>
+            <PropertyRef Name="proj_wbs_id" />
+          </Key>
+          <Property Name="proj_wbs_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="proj_info_id" Type="int" Nullable="false" />
+          <Property Name="proj_wbs_desc" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="proj_wbs_start_date" Type="datetime" Nullable="false" />
+          <Property Name="proj_wbs_end_date" Type="datetime" />
+          <Property Name="sequence" Type="int" Nullable="false" />
+          <Property Name="createdby" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="createddate" Type="datetime" Nullable="false" />
+          <Property Name="notes" Type="varchar" MaxLength="2000" />
+          <Property Name="hurdle" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="resource">
+          <Key>
+            <PropertyRef Name="resource_id" />
+          </Key>
+          <Property Name="resource_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="resource_first_name" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="resource_last_name" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="resource_phone" Type="varchar" MaxLength="15" />
+          <Property Name="resource_gm_ext" Type="int" />
+          <Property Name="resource_email" Type="varchar" MaxLength="50" />
+          <Property Name="notes" Type="varchar" MaxLength="200" />
+          <Property Name="createdby" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="createddate" Type="datetime" Nullable="false" />
+          <Property Name="resource_full_name" Type="int" />
+        </EntityType>
+        <EntityType Name="resource_avail">
+          <Key>
+            <PropertyRef Name="resource_avail_id" />
+          </Key>
+          <Property Name="resource_avail_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="unavail_start_date" Type="datetime" Nullable="false" />
+          <Property Name="unavail_end_date" Type="datetime" Nullable="false" />
+          <Property Name="createdby" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="createddate" Type="datetime" Nullable="false" />
+          <Property Name="resource_id" Type="int" Nullable="false" />
+          <Property Name="unavail_type_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="response_type">
+          <Key>
+            <PropertyRef Name="response_type_id" />
+          </Key>
+          <Property Name="response_type_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="response_type_desc" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="createdby" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="createddate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="risk_category">
+          <Key>
+            <PropertyRef Name="risk_category_id" />
+          </Key>
+          <Property Name="risk_category_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="risk_category_name" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="createdby" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="createddate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="risk_impact">
+          <Key>
+            <PropertyRef Name="risk_impact_id" />
+          </Key>
+          <Property Name="risk_impact_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="risk_impact_desc" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="createdby" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="createddate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="risk_objective">
+          <Key>
+            <PropertyRef Name="risk_objective_id" />
+          </Key>
+          <Property Name="risk_objective_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="risk_objective_desc" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="createdby" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="createddate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="risk_probability">
+          <Key>
+            <PropertyRef Name="risk_probability_id" />
+          </Key>
+          <Property Name="risk_probability_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="risk_probability_desc" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="createdby" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="createddate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="risk_register">
+          <Key>
+            <PropertyRef Name="risk_reg_id" />
+          </Key>
+          <Property Name="risk_reg_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="proj_info_id" Type="int" Nullable="false" />
+          <Property Name="risk_status_id" Type="int" Nullable="false" />
+          <Property Name="risk_category_id" Type="int" Nullable="false" />
+          <Property Name="event" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="cause" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="effect" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="threat_or_opportunity" Type="varchar" Nullable="false" MaxLength="15" />
+          <Property Name="risk_objective_id" Type="int" Nullable="false" />
+          <Property Name="risk_probability_id" Type="int" Nullable="false" />
+          <Property Name="risk_impact_id" Type="int" Nullable="false" />
+          <Property Name="response_action" Type="varchar" MaxLength="50" />
+          <Property Name="responsible_person" Type="varchar" MaxLength="50" />
+          <Property Name="interval_check" Type="varchar" MaxLength="20" />
+          <Property Name="notes" Type="varchar" MaxLength="2000" />
+          <Property Name="createdby" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="createddate" Type="datetime" Nullable="false" />
+          <Property Name="response_type_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="risk_status">
+          <Key>
+            <PropertyRef Name="risk_status_id" />
+          </Key>
+          <Property Name="risk_status_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="risk_status_desc" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="createdby" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="createddate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="search_Info">
+          <Key>
+            <PropertyRef Name="search_Info_id" />
+          </Key>
+          <Property Name="search_Info_id" Type="int" Nullable="false" />
+          <Property Name="search_Name" Type="varchar" Nullable="false" MaxLength="25" />
+        </EntityType>
+        <EntityType Name="stakeholder">
+          <Key>
+            <PropertyRef Name="stakeholder_id" />
+          </Key>
+          <Property Name="stakeholder_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="stakeholder_first_name" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="stakeholder_last_name" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="stakeholder_phone" Type="varchar" MaxLength="15" />
+          <Property Name="stakeholder_gm_ext" Type="int" />
+          <Property Name="stakeholder_email" Type="varchar" MaxLength="50" />
+          <Property Name="notes" Type="varchar" MaxLength="200" />
+          <Property Name="createdby" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="createddate" Type="datetime" Nullable="false" />
+          <Property Name="stakeholder_full_name" Type="varchar" MaxLength="41" />
+        </EntityType>
+        <EntityType Name="unavail_type">
+          <Key>
+            <PropertyRef Name="unavail_type_id" />
+          </Key>
+          <Property Name="unavail_type_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="unavail_type_desc" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="createdby" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="createddate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_closing_proj_info">
+          <End Role="proj_info" Type="PM_FocusModel.Store.proj_info" Multiplicity="1" />
+          <End Role="closing" Type="PM_FocusModel.Store.closing" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="proj_info">
+              <PropertyRef Name="proj_info_id" />
+            </Principal>
+            <Dependent Role="closing">
+              <PropertyRef Name="proj_info_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_proj_activity_proj_wbs">
+          <End Role="proj_wbs" Type="PM_FocusModel.Store.proj_wbs" Multiplicity="1" />
+          <End Role="proj_activity" Type="PM_FocusModel.Store.proj_activity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="proj_wbs">
+              <PropertyRef Name="proj_wbs_id" />
+            </Principal>
+            <Dependent Role="proj_activity">
+              <PropertyRef Name="proj_wbs_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_proj_activity_resource_activity">
+          <End Role="proj_activity" Type="PM_FocusModel.Store.proj_activity" Multiplicity="1" />
+          <End Role="proj_activity_resource" Type="PM_FocusModel.Store.proj_activity_resource" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="proj_activity">
+              <PropertyRef Name="proj_activity_id" />
+            </Principal>
+            <Dependent Role="proj_activity_resource">
+              <PropertyRef Name="proj_activitiy_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_proj_activity_resource_resource">
+          <End Role="resource" Type="PM_FocusModel.Store.resource" Multiplicity="1" />
+          <End Role="proj_activity_resource" Type="PM_FocusModel.Store.proj_activity_resource" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="resource">
+              <PropertyRef Name="resource_id" />
+            </Principal>
+            <Dependent Role="proj_activity_resource">
+              <PropertyRef Name="resource_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_proj_cost_cost">
+          <End Role="cost" Type="PM_FocusModel.Store.cost" Multiplicity="1" />
+          <End Role="proj_cost" Type="PM_FocusModel.Store.proj_cost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cost">
+              <PropertyRef Name="cost_id" />
+            </Principal>
+            <Dependent Role="proj_cost">
+              <PropertyRef Name="cost_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_proj_cost_proj_info">
+          <End Role="proj_info" Type="PM_FocusModel.Store.proj_info" Multiplicity="1" />
+          <End Role="proj_cost" Type="PM_FocusModel.Store.proj_cost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="proj_info">
+              <PropertyRef Name="proj_info_id" />
+            </Principal>
+            <Dependent Role="proj_cost">
+              <PropertyRef Name="proj_info_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_proj_info_dept">
+          <End Role="dept" Type="PM_FocusModel.Store.dept" Multiplicity="0..1" />
+          <End Role="proj_info" Type="PM_FocusModel.Store.proj_info" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="dept">
+              <PropertyRef Name="dept_id" />
+            </Principal>
+            <Dependent Role="proj_info">
+              <PropertyRef Name="dept_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_proj_info_proj_info">
+          <End Role="proj_info" Type="PM_FocusModel.Store.proj_info" Multiplicity="1" />
+          <End Role="proj_info1" Type="PM_FocusModel.Store.proj_info" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="proj_info">
+              <PropertyRef Name="proj_info_id" />
+            </Principal>
+            <Dependent Role="proj_info1">
+              <PropertyRef Name="proj_info_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_proj_info_proj_mgr">
+          <End Role="proj_mgr" Type="PM_FocusModel.Store.proj_mgr" Multiplicity="1" />
+          <End Role="proj_info" Type="PM_FocusModel.Store.proj_info" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="proj_mgr">
+              <PropertyRef Name="proj_mgr_id" />
+            </Principal>
+            <Dependent Role="proj_info">
+              <PropertyRef Name="proj_mgr_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_proj_info_proj_sponsor">
+          <End Role="proj_sponsor" Type="PM_FocusModel.Store.proj_sponsor" Multiplicity="1" />
+          <End Role="proj_info" Type="PM_FocusModel.Store.proj_info" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="proj_sponsor">
+              <PropertyRef Name="proj_sponsor_id" />
+            </Principal>
+            <Dependent Role="proj_info">
+              <PropertyRef Name="proj_sponsor_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_proj_info_proj_status">
+          <End Role="proj_status" Type="PM_FocusModel.Store.proj_status" Multiplicity="1" />
+          <End Role="proj_info" Type="PM_FocusModel.Store.proj_info" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="proj_status">
+              <PropertyRef Name="proj_status_id" />
+            </Principal>
+            <Dependent Role="proj_info">
+              <PropertyRef Name="proj_status_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_proj_info_project_type">
+          <End Role="proj_type" Type="PM_FocusModel.Store.proj_type" Multiplicity="1" />
+          <End Role="proj_info" Type="PM_FocusModel.Store.proj_info" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="proj_type">
+              <PropertyRef Name="project_type_id" />
+            </Principal>
+            <Dependent Role="proj_info">
+              <PropertyRef Name="project_type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_proj_issues_issue_severity">
+          <End Role="issue_severity" Type="PM_FocusModel.Store.issue_severity" Multiplicity="1" />
+          <End Role="proj_issues" Type="PM_FocusModel.Store.proj_issues" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="issue_severity">
+              <PropertyRef Name="issue_severity_id" />
+            </Principal>
+            <Dependent Role="proj_issues">
+              <PropertyRef Name="issue_severity_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_proj_issues_issue_type">
+          <End Role="issue_type" Type="PM_FocusModel.Store.issue_type" Multiplicity="1" />
+          <End Role="proj_issues" Type="PM_FocusModel.Store.proj_issues" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="issue_type">
+              <PropertyRef Name="issue_type_id" />
+            </Principal>
+            <Dependent Role="proj_issues">
+              <PropertyRef Name="issue_type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_proj_issues_proj_info">
+          <End Role="proj_info" Type="PM_FocusModel.Store.proj_info" Multiplicity="1" />
+          <End Role="proj_issues" Type="PM_FocusModel.Store.proj_issues" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="proj_info">
+              <PropertyRef Name="proj_info_id" />
+            </Principal>
+            <Dependent Role="proj_issues">
+              <PropertyRef Name="proj_info_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_proj_log_proj_info">
+          <End Role="proj_info" Type="PM_FocusModel.Store.proj_info" Multiplicity="1" />
+          <End Role="proj_log" Type="PM_FocusModel.Store.proj_log" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="proj_info">
+              <PropertyRef Name="proj_info_id" />
+            </Principal>
+            <Dependent Role="proj_log">
+              <PropertyRef Name="proj_info_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_proj_log_proj_log_code">
+          <End Role="proj_log_code" Type="PM_FocusModel.Store.proj_log_code" Multiplicity="1" />
+          <End Role="proj_log" Type="PM_FocusModel.Store.proj_log" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="proj_log_code">
+              <PropertyRef Name="proj_log_code_id" />
+            </Principal>
+            <Dependent Role="proj_log">
+              <PropertyRef Name="proj_log_code_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_proj_stakeholder_proj_info">
+          <End Role="proj_info" Type="PM_FocusModel.Store.proj_info" Multiplicity="1" />
+          <End Role="proj_stakeholder" Type="PM_FocusModel.Store.proj_stakeholder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="proj_info">
+              <PropertyRef Name="proj_info_id" />
+            </Principal>
+            <Dependent Role="proj_stakeholder">
+              <PropertyRef Name="proj_info_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_proj_stakeholder_stakeholder">
+          <End Role="stakeholder" Type="PM_FocusModel.Store.stakeholder" Multiplicity="1" />
+          <End Role="proj_stakeholder" Type="PM_FocusModel.Store.proj_stakeholder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="stakeholder">
+              <PropertyRef Name="stakeholder_id" />
+            </Principal>
+            <Dependent Role="proj_stakeholder">
+              <PropertyRef Name="stakeholder_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_proj_wbs_proj_info">
+          <End Role="proj_info" Type="PM_FocusModel.Store.proj_info" Multiplicity="1" />
+          <End Role="proj_wbs" Type="PM_FocusModel.Store.proj_wbs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="proj_info">
+              <PropertyRef Name="proj_info_id" />
+            </Principal>
+            <Dependent Role="proj_wbs">
+              <PropertyRef Name="proj_info_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_resource_avail_resource1">
+          <End Role="resource" Type="PM_FocusModel.Store.resource" Multiplicity="1" />
+          <End Role="resource_avail" Type="PM_FocusModel.Store.resource_avail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="resource">
+              <PropertyRef Name="resource_id" />
+            </Principal>
+            <Dependent Role="resource_avail">
+              <PropertyRef Name="resource_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_resource_avail_unavail_type">
+          <End Role="unavail_type" Type="PM_FocusModel.Store.unavail_type" Multiplicity="1" />
+          <End Role="resource_avail" Type="PM_FocusModel.Store.resource_avail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="unavail_type">
+              <PropertyRef Name="unavail_type_id" />
+            </Principal>
+            <Dependent Role="resource_avail">
+              <PropertyRef Name="unavail_type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_risk_register_proj_info">
+          <End Role="proj_info" Type="PM_FocusModel.Store.proj_info" Multiplicity="1" />
+          <End Role="risk_register" Type="PM_FocusModel.Store.risk_register" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="proj_info">
+              <PropertyRef Name="proj_info_id" />
+            </Principal>
+            <Dependent Role="risk_register">
+              <PropertyRef Name="proj_info_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_risk_register_response_type">
+          <End Role="response_type" Type="PM_FocusModel.Store.response_type" Multiplicity="1" />
+          <End Role="risk_register" Type="PM_FocusModel.Store.risk_register" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="response_type">
+              <PropertyRef Name="response_type_id" />
+            </Principal>
+            <Dependent Role="risk_register">
+              <PropertyRef Name="response_type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_risk_register_risk_category">
+          <End Role="risk_category" Type="PM_FocusModel.Store.risk_category" Multiplicity="1" />
+          <End Role="risk_register" Type="PM_FocusModel.Store.risk_register" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="risk_category">
+              <PropertyRef Name="risk_category_id" />
+            </Principal>
+            <Dependent Role="risk_register">
+              <PropertyRef Name="risk_category_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_risk_register_risk_impact">
+          <End Role="risk_impact" Type="PM_FocusModel.Store.risk_impact" Multiplicity="1" />
+          <End Role="risk_register" Type="PM_FocusModel.Store.risk_register" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="risk_impact">
+              <PropertyRef Name="risk_impact_id" />
+            </Principal>
+            <Dependent Role="risk_register">
+              <PropertyRef Name="risk_impact_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_risk_register_risk_objective">
+          <End Role="risk_objective" Type="PM_FocusModel.Store.risk_objective" Multiplicity="1" />
+          <End Role="risk_register" Type="PM_FocusModel.Store.risk_register" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="risk_objective">
+              <PropertyRef Name="risk_objective_id" />
+            </Principal>
+            <Dependent Role="risk_register">
+              <PropertyRef Name="risk_objective_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_risk_register_risk_probability">
+          <End Role="risk_probability" Type="PM_FocusModel.Store.risk_probability" Multiplicity="1" />
+          <End Role="risk_register" Type="PM_FocusModel.Store.risk_register" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="risk_probability">
+              <PropertyRef Name="risk_probability_id" />
+            </Principal>
+            <Dependent Role="risk_register">
+              <PropertyRef Name="risk_probability_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_risk_register_risk_status">
+          <End Role="risk_status" Type="PM_FocusModel.Store.risk_status" Multiplicity="1" />
+          <End Role="risk_register" Type="PM_FocusModel.Store.risk_register" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="risk_status">
+              <PropertyRef Name="risk_status_id" />
+            </Principal>
+            <Dependent Role="risk_register">
+              <PropertyRef Name="risk_status_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PM_FocusModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="PMEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="closings" EntityType="PM_FocusModel.closing" />
+          <EntitySet Name="costs" EntityType="PM_FocusModel.cost" />
+          <EntitySet Name="depts" EntityType="PM_FocusModel.dept" />
+          <EntitySet Name="proj_activity" EntityType="PM_FocusModel.proj_activity" />
+          <EntitySet Name="proj_activity_resource" EntityType="PM_FocusModel.proj_activity_resource" />
+          <EntitySet Name="proj_cost" EntityType="PM_FocusModel.proj_cost" />
+          <EntitySet Name="proj_info" EntityType="PM_FocusModel.proj_info" />
+          <EntitySet Name="proj_mgr" EntityType="PM_FocusModel.proj_mgr" />
+          <EntitySet Name="proj_sponsor" EntityType="PM_FocusModel.proj_sponsor" />
+          <EntitySet Name="proj_stakeholder" EntityType="PM_FocusModel.proj_stakeholder" />
+          <EntitySet Name="proj_status" EntityType="PM_FocusModel.proj_status" />
+          <EntitySet Name="proj_type" EntityType="PM_FocusModel.proj_type" />
+          <EntitySet Name="proj_wbs" EntityType="PM_FocusModel.proj_wbs" />
+          <EntitySet Name="resources" EntityType="PM_FocusModel.resource" />
+          <EntitySet Name="response_type" EntityType="PM_FocusModel.response_type" />
+          <EntitySet Name="risk_category" EntityType="PM_FocusModel.risk_category" />
+          <EntitySet Name="risk_impact" EntityType="PM_FocusModel.risk_impact" />
+          <EntitySet Name="risk_objective" EntityType="PM_FocusModel.risk_objective" />
+          <EntitySet Name="risk_probability" EntityType="PM_FocusModel.risk_probability" />
+          <EntitySet Name="risk_register" EntityType="PM_FocusModel.risk_register" />
+          <EntitySet Name="risk_status" EntityType="PM_FocusModel.risk_status" />
+          <EntitySet Name="stakeholders" EntityType="PM_FocusModel.stakeholder" />
+          <AssociationSet Name="FK_closing_proj_info" Association="PM_FocusModel.FK_closing_proj_info">
+            <End Role="proj_info" EntitySet="proj_info" />
+            <End Role="closing" EntitySet="closings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_proj_cost_cost" Association="PM_FocusModel.FK_proj_cost_cost">
+            <End Role="cost" EntitySet="costs" />
+            <End Role="proj_cost" EntitySet="proj_cost" />
+          </AssociationSet>
+          <AssociationSet Name="FK_proj_info_dept" Association="PM_FocusModel.FK_proj_info_dept">
+            <End Role="dept" EntitySet="depts" />
+            <End Role="proj_info" EntitySet="proj_info" />
+          </AssociationSet>
+          <AssociationSet Name="FK_proj_activity_proj_wbs" Association="PM_FocusModel.FK_proj_activity_proj_wbs">
+            <End Role="proj_wbs" EntitySet="proj_wbs" />
+            <End Role="proj_activity" EntitySet="proj_activity" />
+          </AssociationSet>
+          <AssociationSet Name="FK_proj_activity_resource_activity" Association="PM_FocusModel.FK_proj_activity_resource_activity">
+            <End Role="proj_activity" EntitySet="proj_activity" />
+            <End Role="proj_activity_resource" EntitySet="proj_activity_resource" />
+          </AssociationSet>
+          <AssociationSet Name="FK_proj_activity_resource_resource" Association="PM_FocusModel.FK_proj_activity_resource_resource">
+            <End Role="resource" EntitySet="resources" />
+            <End Role="proj_activity_resource" EntitySet="proj_activity_resource" />
+          </AssociationSet>
+          <AssociationSet Name="FK_proj_cost_proj_info" Association="PM_FocusModel.FK_proj_cost_proj_info">
+            <End Role="proj_info" EntitySet="proj_info" />
+            <End Role="proj_cost" EntitySet="proj_cost" />
+          </AssociationSet>
+          <AssociationSet Name="FK_proj_info_proj_info" Association="PM_FocusModel.FK_proj_info_proj_info">
+            <End Role="proj_info" EntitySet="proj_info" />
+            <End Role="proj_info1" EntitySet="proj_info" />
+          </AssociationSet>
+          <AssociationSet Name="FK_proj_info_proj_mgr" Association="PM_FocusModel.FK_proj_info_proj_mgr">
+            <End Role="proj_mgr" EntitySet="proj_mgr" />
+            <End Role="proj_info" EntitySet="proj_info" />
+          </AssociationSet>
+          <AssociationSet Name="FK_proj_info_proj_sponsor" Association="PM_FocusModel.FK_proj_info_proj_sponsor">
+            <End Role="proj_sponsor" EntitySet="proj_sponsor" />
+            <End Role="proj_info" EntitySet="proj_info" />
+          </AssociationSet>
+          <AssociationSet Name="FK_proj_info_proj_status" Association="PM_FocusModel.FK_proj_info_proj_status">
+            <End Role="proj_status" EntitySet="proj_status" />
+            <End Role="proj_info" EntitySet="proj_info" />
+          </AssociationSet>
+          <AssociationSet Name="FK_proj_info_project_type" Association="PM_FocusModel.FK_proj_info_project_type">
+            <End Role="proj_type" EntitySet="proj_type" />
+            <End Role="proj_info" EntitySet="proj_info" />
+          </AssociationSet>
+          <AssociationSet Name="FK_proj_stakeholder_proj_info" Association="PM_FocusModel.FK_proj_stakeholder_proj_info">
+            <End Role="proj_info" EntitySet="proj_info" />
+            <End Role="proj_stakeholder" EntitySet="proj_stakeholder" />
+          </AssociationSet>
+          <AssociationSet Name="FK_proj_wbs_proj_info" Association="PM_FocusModel.FK_proj_wbs_proj_info">
+            <End Role="proj_info" EntitySet="proj_info" />
+            <End Role="proj_wbs" EntitySet="proj_wbs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_risk_register_proj_info" Association="PM_FocusModel.FK_risk_register_proj_info">
+            <End Role="proj_info" EntitySet="proj_info" />
+            <End Role="risk_register" EntitySet="risk_register" />
+          </AssociationSet>
+          <AssociationSet Name="FK_proj_stakeholder_stakeholder" Association="PM_FocusModel.FK_proj_stakeholder_stakeholder">
+            <End Role="stakeholder" EntitySet="stakeholders" />
+            <End Role="proj_stakeholder" EntitySet="proj_stakeholder" />
+          </AssociationSet>
+          <AssociationSet Name="FK_risk_register_response_type" Association="PM_FocusModel.FK_risk_register_response_type">
+            <End Role="response_type" EntitySet="response_type" />
+            <End Role="risk_register" EntitySet="risk_register" />
+          </AssociationSet>
+          <AssociationSet Name="FK_risk_register_risk_category" Association="PM_FocusModel.FK_risk_register_risk_category">
+            <End Role="risk_category" EntitySet="risk_category" />
+            <End Role="risk_register" EntitySet="risk_register" />
+          </AssociationSet>
+          <AssociationSet Name="FK_risk_register_risk_impact" Association="PM_FocusModel.FK_risk_register_risk_impact">
+            <End Role="risk_impact" EntitySet="risk_impact" />
+            <End Role="risk_register" EntitySet="risk_register" />
+          </AssociationSet>
+          <AssociationSet Name="FK_risk_register_risk_objective" Association="PM_FocusModel.FK_risk_register_risk_objective">
+            <End Role="risk_objective" EntitySet="risk_objective" />
+            <End Role="risk_register" EntitySet="risk_register" />
+          </AssociationSet>
+          <AssociationSet Name="FK_risk_register_risk_probability" Association="PM_FocusModel.FK_risk_register_risk_probability">
+            <End Role="risk_probability" EntitySet="risk_probability" />
+            <End Role="risk_register" EntitySet="risk_register" />
+          </AssociationSet>
+          <AssociationSet Name="FK_risk_register_risk_status" Association="PM_FocusModel.FK_risk_register_risk_status">
+            <End Role="risk_status" EntitySet="risk_status" />
+            <End Role="risk_register" EntitySet="risk_register" />
+          </AssociationSet>
+          <EntitySet Name="resource_avail" EntityType="PM_FocusModel.resource_avail" />
+          <AssociationSet Name="FK_resource_avail_resource1" Association="PM_FocusModel.FK_resource_avail_resource1">
+            <End Role="resource" EntitySet="resources" />
+            <End Role="resource_avail" EntitySet="resource_avail" />
+          </AssociationSet>
+          <EntitySet Name="holiday_schedule" EntityType="PM_FocusModel.holiday_schedule" />
+          <EntitySet Name="proj_log" EntityType="PM_FocusModel.proj_log" />
+          <EntitySet Name="proj_log_code" EntityType="PM_FocusModel.proj_log_code" />
+          <EntitySet Name="unavail_type" EntityType="PM_FocusModel.unavail_type" />
+          <AssociationSet Name="FK_proj_log_proj_info" Association="PM_FocusModel.FK_proj_log_proj_info">
+            <End Role="proj_info" EntitySet="proj_info" />
+            <End Role="proj_log" EntitySet="proj_log" />
+          </AssociationSet>
+          <AssociationSet Name="FK_proj_log_proj_log_code" Association="PM_FocusModel.FK_proj_log_proj_log_code">
+            <End Role="proj_log_code" EntitySet="proj_log_code" />
+            <End Role="proj_log" EntitySet="proj_log" />
+          </AssociationSet>
+          <AssociationSet Name="FK_resource_avail_unavail_type" Association="PM_FocusModel.FK_resource_avail_unavail_type">
+            <End Role="unavail_type" EntitySet="unavail_type" />
+            <End Role="resource_avail" EntitySet="resource_avail" />
+          </AssociationSet>
+          <EntitySet Name="issue_severity" EntityType="PM_FocusModel.issue_severity" />
+          <EntitySet Name="issue_type" EntityType="PM_FocusModel.issue_type" />
+          <EntitySet Name="proj_issues" EntityType="PM_FocusModel.proj_issues" />
+          <AssociationSet Name="FK_proj_issues_issue_severity" Association="PM_FocusModel.FK_proj_issues_issue_severity">
+            <End Role="issue_severity" EntitySet="issue_severity" />
+            <End Role="proj_issues" EntitySet="proj_issues" />
+          </AssociationSet>
+          <AssociationSet Name="FK_proj_issues_issue_type" Association="PM_FocusModel.FK_proj_issues_issue_type">
+            <End Role="issue_type" EntitySet="issue_type" />
+            <End Role="proj_issues" EntitySet="proj_issues" />
+          </AssociationSet>
+          <AssociationSet Name="FK_proj_issues_proj_info" Association="PM_FocusModel.FK_proj_issues_proj_info">
+            <End Role="proj_info" EntitySet="proj_info" />
+            <End Role="proj_issues" EntitySet="proj_issues" />
+          </AssociationSet>
+          <EntitySet Name="search_Info" EntityType="PM_FocusModel.search_Info" />
+        </EntityContainer>
+        <EntityType Name="closing">
+          <Key>
+            <PropertyRef Name="proj_close_id" />
+          </Key>
+          <Property Name="proj_close_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="final_reports_run" Type="Boolean" Nullable="false" />
+          <Property Name="product_delivered" Type="Boolean" Nullable="false" />
+          <Property Name="contracts_closed" Type="Boolean" Nullable="false" />
+          <Property Name="project_team_released" Type="Boolean" Nullable="false" />
+          <Property Name="lessons_learned" Type="String" Nullable="false" MaxLength="4000" Unicode="false" FixedLength="false" />
+          <Property Name="proj_info_id" Type="Int32" Nullable="false" />
+          <Property Name="createdby" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="createddate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="sponsor_approval" Type="Boolean" Nullable="false" />
+          <Property Name="notes" Type="String" MaxLength="1000" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="proj_info" Relationship="PM_FocusModel.FK_closing_proj_info" FromRole="closing" ToRole="proj_info" />
+        </EntityType>
+        <EntityType Name="cost">
+          <Key>
+            <PropertyRef Name="cost_id" />
+          </Key>
+          <Property Name="cost_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="cost_name" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="createdby" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="createddate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="proj_cost" Relationship="PM_FocusModel.FK_proj_cost_cost" FromRole="cost" ToRole="proj_cost" />
+        </EntityType>
+        <EntityType Name="dept">
+          <Key>
+            <PropertyRef Name="dept_id" />
+          </Key>
+          <Property Name="dept_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="dept_desc" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="createdby" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="createddate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="proj_info" Relationship="PM_FocusModel.FK_proj_info_dept" FromRole="dept" ToRole="proj_info" />
+        </EntityType>
+        <EntityType Name="proj_activity">
+          <Key>
+            <PropertyRef Name="proj_activity_id" />
+          </Key>
+          <Property Name="proj_activity_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="proj_wbs_id" Type="Int32" Nullable="false" />
+          <Property Name="proj_activity_desc" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="proj_activity_start_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="proj_activity_end_date" Type="DateTime" Precision="3" />
+          <Property Name="sequence" Type="Int32" />
+          <Property Name="predecessor" Type="Int32" />
+          <Property Name="createdby" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="createddate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="notes" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="proj_wbs" Relationship="PM_FocusModel.FK_proj_activity_proj_wbs" FromRole="proj_activity" ToRole="proj_wbs" />
+          <NavigationProperty Name="proj_activity_resource" Relationship="PM_FocusModel.FK_proj_activity_resource_activity" FromRole="proj_activity" ToRole="proj_activity_resource" />
+          <Property Type="Int32" Name="Duration_Days" Nullable="false" />
+        </EntityType>
+        <EntityType Name="proj_activity_resource">
+          <Key>
+            <PropertyRef Name="proj_activity_resource_id" />
+          </Key>
+          <Property Name="proj_activity_resource_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="proj_activitiy_id" Type="Int32" Nullable="false" />
+          <Property Name="resource_id" Type="Int32" Nullable="false" />
+          <Property Name="resource_avail_pct" Type="Decimal" Precision="3" Scale="2" />
+          <Property Name="createdby" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="createddate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="notes" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="proj_activity" Relationship="PM_FocusModel.FK_proj_activity_resource_activity" FromRole="proj_activity_resource" ToRole="proj_activity" />
+          <NavigationProperty Name="resource" Relationship="PM_FocusModel.FK_proj_activity_resource_resource" FromRole="proj_activity_resource" ToRole="resource" />
+        </EntityType>
+        <EntityType Name="proj_cost">
+          <Key>
+            <PropertyRef Name="proj_cost_id" />
+          </Key>
+          <Property Name="proj_cost_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="cost_id" Type="Int32" Nullable="false" />
+          <Property Name="proj_info_id" Type="Int32" Nullable="false" />
+          <Property Name="amount" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="createdby" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="createddate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="cost" Relationship="PM_FocusModel.FK_proj_cost_cost" FromRole="proj_cost" ToRole="cost" />
+          <NavigationProperty Name="proj_info" Relationship="PM_FocusModel.FK_proj_cost_proj_info" FromRole="proj_cost" ToRole="proj_info" />
+        </EntityType>
+        <EntityType Name="proj_info">
+          <Key>
+            <PropertyRef Name="proj_info_id" />
+          </Key>
+          <Property Name="proj_info_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="proj_name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="proj_mgr_id" Type="Int32" Nullable="false" />
+          <Property Name="proj_sponsor_id" Type="Int32" Nullable="false" />
+          <Property Name="charter" Type="Boolean" />
+          <Property Name="scope_definition" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+          <Property Name="dept_id" Type="Int32" />
+          <Property Name="client" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="proj_start_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="proj_end_date" Type="DateTime" Precision="3" />
+          <Property Name="proj_status_id" Type="Int32" Nullable="false" />
+          <Property Name="project_type_id" Type="Int32" Nullable="false" />
+          <Property Name="createdby" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="createddate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="notes" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+          <Property Name="proj_goal" Type="String" Nullable="false" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="closings" Relationship="PM_FocusModel.FK_closing_proj_info" FromRole="proj_info" ToRole="closing" />
+          <NavigationProperty Name="dept" Relationship="PM_FocusModel.FK_proj_info_dept" FromRole="proj_info" ToRole="dept" />
+          <NavigationProperty Name="proj_cost" Relationship="PM_FocusModel.FK_proj_cost_proj_info" FromRole="proj_info" ToRole="proj_cost" />
+          <NavigationProperty Name="proj_info1" Relationship="PM_FocusModel.FK_proj_info_proj_info" FromRole="proj_info" ToRole="proj_info1" />
+          <NavigationProperty Name="proj_info2" Relationship="PM_FocusModel.FK_proj_info_proj_info" FromRole="proj_info1" ToRole="proj_info" />
+          <NavigationProperty Name="proj_mgr" Relationship="PM_FocusModel.FK_proj_info_proj_mgr" FromRole="proj_info" ToRole="proj_mgr" />
+          <NavigationProperty Name="proj_sponsor" Relationship="PM_FocusModel.FK_proj_info_proj_sponsor" FromRole="proj_info" ToRole="proj_sponsor" />
+          <NavigationProperty Name="proj_status" Relationship="PM_FocusModel.FK_proj_info_proj_status" FromRole="proj_info" ToRole="proj_status" />
+          <NavigationProperty Name="proj_type" Relationship="PM_FocusModel.FK_proj_info_project_type" FromRole="proj_info" ToRole="proj_type" />
+          <NavigationProperty Name="proj_stakeholder" Relationship="PM_FocusModel.FK_proj_stakeholder_proj_info" FromRole="proj_info" ToRole="proj_stakeholder" />
+          <NavigationProperty Name="proj_wbs" Relationship="PM_FocusModel.FK_proj_wbs_proj_info" FromRole="proj_info" ToRole="proj_wbs" />
+          <NavigationProperty Name="risk_register" Relationship="PM_FocusModel.FK_risk_register_proj_info" FromRole="proj_info" ToRole="risk_register" />
+          <Property Type="String" Name="doc_location" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="proj_log" Relationship="PM_FocusModel.FK_proj_log_proj_info" FromRole="proj_info" ToRole="proj_log" />
+          <NavigationProperty Name="proj_issues" Relationship="PM_FocusModel.FK_proj_issues_proj_info" FromRole="proj_info" ToRole="proj_issues" />
+        </EntityType>
+        <EntityType Name="proj_mgr">
+          <Key>
+            <PropertyRef Name="proj_mgr_id" />
+          </Key>
+          <Property Name="proj_mgr_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="proj_mgr_first_name" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="proj_mgr_last_name" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="proj_mgr_phone" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="proj_mgr_gm_ext" Type="Int32" />
+          <Property Name="proj_mgr_email" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="createdby" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="createddate" Type="DateTime" Precision="3" Nullable="false" />
+          <NavigationProperty Name="proj_info" Relationship="PM_FocusModel.FK_proj_info_proj_mgr" FromRole="proj_mgr" ToRole="proj_info" />
+          <Property Type="String" Name="full_name" MaxLength="41" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="proj_sponsor">
+          <Key>
+            <PropertyRef Name="proj_sponsor_id" />
+          </Key>
+          <Property Name="proj_sponsor_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="proj_sponsor_first_name" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="proj_sponsor_last_name" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="proj_sponsor_phone" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="proj_sponsor_gm_ext" Type="Int32" />
+          <Property Name="proj_sponsor_email" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="createdby" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="createddate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="proj_info" Relationship="PM_FocusModel.FK_proj_info_proj_sponsor" FromRole="proj_sponsor" ToRole="proj_info" />
+          <Property Type="String" Name="full_name" MaxLength="41" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="proj_stakeholder">
+          <Key>
+            <PropertyRef Name="proj_stakeholder_id" />
+          </Key>
+          <Property Name="proj_stakeholder_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="proj_info_id" Type="Int32" Nullable="false" />
+          <Property Name="stakeholder_id" Type="Int32" Nullable="false" />
+          <Property Name="createdby" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="createddate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="proj_info" Relationship="PM_FocusModel.FK_proj_stakeholder_proj_info" FromRole="proj_stakeholder" ToRole="proj_info" />
+          <NavigationProperty Name="stakeholder" Relationship="PM_FocusModel.FK_proj_stakeholder_stakeholder" FromRole="proj_stakeholder" ToRole="stakeholder" />
+        </EntityType>
+        <EntityType Name="proj_status">
+          <Key>
+            <PropertyRef Name="proj_status_id" />
+          </Key>
+          <Property Name="proj_status_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="proj_status_desc" Type="String" Nullable="false" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="createdby" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="createddate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="proj_info" Relationship="PM_FocusModel.FK_proj_info_proj_status" FromRole="proj_status" ToRole="proj_info" />
+        </EntityType>
+        <EntityType Name="proj_type">
+          <Key>
+            <PropertyRef Name="project_type_id" />
+          </Key>
+          <Property Name="project_type_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="project_type_name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="createdby" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="createddate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="proj_info" Relationship="PM_FocusModel.FK_proj_info_project_type" FromRole="proj_type" ToRole="proj_info" />
+        </EntityType>
+        <EntityType Name="proj_wbs">
+          <Key>
+            <PropertyRef Name="proj_wbs_id" />
+          </Key>
+          <Property Name="proj_wbs_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="proj_info_id" Type="Int32" Nullable="false" />
+          <Property Name="proj_wbs_desc" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="proj_wbs_start_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="proj_wbs_end_date" Type="DateTime" Precision="3" />
+          <Property Name="sequence" Type="Int32" Nullable="false" />
+          <Property Name="createdby" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="createddate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="notes" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+          <Property Name="hurdle" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="proj_activity" Relationship="PM_FocusModel.FK_proj_activity_proj_wbs" FromRole="proj_wbs" ToRole="proj_activity" />
+          <NavigationProperty Name="proj_info" Relationship="PM_FocusModel.FK_proj_wbs_proj_info" FromRole="proj_wbs" ToRole="proj_info" />
+        </EntityType>
+        <EntityType Name="resource">
+          <Key>
+            <PropertyRef Name="resource_id" />
+          </Key>
+          <Property Name="resource_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="resource_first_name" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="resource_last_name" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="resource_phone" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="resource_gm_ext" Type="Int32" />
+          <Property Name="resource_email" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="notes" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="createdby" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="createddate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="proj_activity_resource" Relationship="PM_FocusModel.FK_proj_activity_resource_resource" FromRole="resource" ToRole="proj_activity_resource" />
+          <NavigationProperty Name="resource_avail" Relationship="PM_FocusModel.FK_resource_avail_resource1" FromRole="resource" ToRole="resource_avail" />
+          <Property Type="Int32" Name="resource_full_name" />
+        </EntityType>
+        <EntityType Name="response_type">
+          <Key>
+            <PropertyRef Name="response_type_id" />
+          </Key>
+          <Property Name="response_type_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="response_type_desc" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="createdby" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="createddate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="risk_register" Relationship="PM_FocusModel.FK_risk_register_response_type" FromRole="response_type" ToRole="risk_register" />
+        </EntityType>
+        <EntityType Name="risk_category">
+          <Key>
+            <PropertyRef Name="risk_category_id" />
+          </Key>
+          <Property Name="risk_category_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="risk_category_name" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="createdby" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="createddate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="risk_register" Relationship="PM_FocusModel.FK_risk_register_risk_category" FromRole="risk_category" ToRole="risk_register" />
+        </EntityType>
+        <EntityType Name="risk_impact">
+          <Key>
+            <PropertyRef Name="risk_impact_id" />
+          </Key>
+          <Property Name="risk_impact_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="risk_impact_desc" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="createdby" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="createddate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="risk_register" Relationship="PM_FocusModel.FK_risk_register_risk_impact" FromRole="risk_impact" ToRole="risk_register" />
+        </EntityType>
+        <EntityType Name="risk_objective">
+          <Key>
+            <PropertyRef Name="risk_objective_id" />
+          </Key>
+          <Property Name="risk_objective_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="risk_objective_desc" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="createdby" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="createddate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="risk_register" Relationship="PM_FocusModel.FK_risk_register_risk_objective" FromRole="risk_objective" ToRole="risk_register" />
+        </EntityType>
+        <EntityType Name="risk_probability">
+          <Key>
+            <PropertyRef Name="risk_probability_id" />
+          </Key>
+          <Property Name="risk_probability_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="risk_probability_desc" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="createdby" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="createddate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="risk_register" Relationship="PM_FocusModel.FK_risk_register_risk_probability" FromRole="risk_probability" ToRole="risk_register" />
+        </EntityType>
+        <EntityType Name="risk_register">
+          <Key>
+            <PropertyRef Name="risk_reg_id" />
+          </Key>
+          <Property Name="risk_reg_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="proj_info_id" Type="Int32" Nullable="false" />
+          <Property Name="risk_status_id" Type="Int32" Nullable="false" />
+          <Property Name="risk_category_id" Type="Int32" Nullable="false" />
+          <Property Name="event" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="cause" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="effect" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="threat_or_opportunity" Type="String" Nullable="false" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="risk_objective_id" Type="Int32" Nullable="false" />
+          <Property Name="risk_probability_id" Type="Int32" Nullable="false" />
+          <Property Name="risk_impact_id" Type="Int32" Nullable="false" />
+          <Property Name="response_action" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="responsible_person" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="interval_check" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="notes" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+          <Property Name="createdby" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="createddate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="response_type_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="proj_info" Relationship="PM_FocusModel.FK_risk_register_proj_info" FromRole="risk_register" ToRole="proj_info" />
+          <NavigationProperty Name="response_type" Relationship="PM_FocusModel.FK_risk_register_response_type" FromRole="risk_register" ToRole="response_type" />
+          <NavigationProperty Name="risk_category" Relationship="PM_FocusModel.FK_risk_register_risk_category" FromRole="risk_register" ToRole="risk_category" />
+          <NavigationProperty Name="risk_impact" Relationship="PM_FocusModel.FK_risk_register_risk_impact" FromRole="risk_register" ToRole="risk_impact" />
+          <NavigationProperty Name="risk_objective" Relationship="PM_FocusModel.FK_risk_register_risk_objective" FromRole="risk_register" ToRole="risk_objective" />
+          <NavigationProperty Name="risk_probability" Relationship="PM_FocusModel.FK_risk_register_risk_probability" FromRole="risk_register" ToRole="risk_probability" />
+          <NavigationProperty Name="risk_status" Relationship="PM_FocusModel.FK_risk_register_risk_status" FromRole="risk_register" ToRole="risk_status" />
+        </EntityType>
+        <EntityType Name="risk_status">
+          <Key>
+            <PropertyRef Name="risk_status_id" />
+          </Key>
+          <Property Name="risk_status_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="risk_status_desc" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="createdby" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="createddate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="risk_register" Relationship="PM_FocusModel.FK_risk_register_risk_status" FromRole="risk_status" ToRole="risk_register" />
+        </EntityType>
+        <EntityType Name="stakeholder">
+          <Key>
+            <PropertyRef Name="stakeholder_id" />
+          </Key>
+          <Property Name="stakeholder_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="stakeholder_first_name" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="stakeholder_last_name" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="stakeholder_phone" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="stakeholder_gm_ext" Type="Int32" />
+          <Property Name="stakeholder_email" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="notes" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="createdby" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="createddate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="proj_stakeholder" Relationship="PM_FocusModel.FK_proj_stakeholder_stakeholder" FromRole="stakeholder" ToRole="proj_stakeholder" />
+          <Property Type="String" Name="stakeholder_full_name" MaxLength="41" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="FK_closing_proj_info">
+          <End Role="proj_info" Type="PM_FocusModel.proj_info" Multiplicity="1" />
+          <End Role="closing" Type="PM_FocusModel.closing" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="proj_info">
+              <PropertyRef Name="proj_info_id" />
+            </Principal>
+            <Dependent Role="closing">
+              <PropertyRef Name="proj_info_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_proj_cost_cost">
+          <End Role="cost" Type="PM_FocusModel.cost" Multiplicity="1" />
+          <End Role="proj_cost" Type="PM_FocusModel.proj_cost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cost">
+              <PropertyRef Name="cost_id" />
+            </Principal>
+            <Dependent Role="proj_cost">
+              <PropertyRef Name="cost_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_proj_info_dept">
+          <End Role="dept" Type="PM_FocusModel.dept" Multiplicity="0..1" />
+          <End Role="proj_info" Type="PM_FocusModel.proj_info" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="dept">
+              <PropertyRef Name="dept_id" />
+            </Principal>
+            <Dependent Role="proj_info">
+              <PropertyRef Name="dept_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_proj_activity_proj_wbs">
+          <End Role="proj_wbs" Type="PM_FocusModel.proj_wbs" Multiplicity="1" />
+          <End Role="proj_activity" Type="PM_FocusModel.proj_activity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="proj_wbs">
+              <PropertyRef Name="proj_wbs_id" />
+            </Principal>
+            <Dependent Role="proj_activity">
+              <PropertyRef Name="proj_wbs_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_proj_activity_resource_activity">
+          <End Role="proj_activity" Type="PM_FocusModel.proj_activity" Multiplicity="1" />
+          <End Role="proj_activity_resource" Type="PM_FocusModel.proj_activity_resource" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="proj_activity">
+              <PropertyRef Name="proj_activity_id" />
+            </Principal>
+            <Dependent Role="proj_activity_resource">
+              <PropertyRef Name="proj_activitiy_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_proj_activity_resource_resource">
+          <End Role="resource" Type="PM_FocusModel.resource" Multiplicity="1" />
+          <End Role="proj_activity_resource" Type="PM_FocusModel.proj_activity_resource" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="resource">
+              <PropertyRef Name="resource_id" />
+            </Principal>
+            <Dependent Role="proj_activity_resource">
+              <PropertyRef Name="resource_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_proj_cost_proj_info">
+          <End Role="proj_info" Type="PM_FocusModel.proj_info" Multiplicity="1" />
+          <End Role="proj_cost" Type="PM_FocusModel.proj_cost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="proj_info">
+              <PropertyRef Name="proj_info_id" />
+            </Principal>
+            <Dependent Role="proj_cost">
+              <PropertyRef Name="proj_info_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_proj_info_proj_info">
+          <End Role="proj_info" Type="PM_FocusModel.proj_info" Multiplicity="1" />
+          <End Role="proj_info1" Type="PM_FocusModel.proj_info" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="proj_info">
+              <PropertyRef Name="proj_info_id" />
+            </Principal>
+            <Dependent Role="proj_info1">
+              <PropertyRef Name="proj_info_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_proj_info_proj_mgr">
+          <End Role="proj_mgr" Type="PM_FocusModel.proj_mgr" Multiplicity="1" />
+          <End Role="proj_info" Type="PM_FocusModel.proj_info" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="proj_mgr">
+              <PropertyRef Name="proj_mgr_id" />
+            </Principal>
+            <Dependent Role="proj_info">
+              <PropertyRef Name="proj_mgr_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_proj_info_proj_sponsor">
+          <End Role="proj_sponsor" Type="PM_FocusModel.proj_sponsor" Multiplicity="1" />
+          <End Role="proj_info" Type="PM_FocusModel.proj_info" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="proj_sponsor">
+              <PropertyRef Name="proj_sponsor_id" />
+            </Principal>
+            <Dependent Role="proj_info">
+              <PropertyRef Name="proj_sponsor_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_proj_info_proj_status">
+          <End Role="proj_status" Type="PM_FocusModel.proj_status" Multiplicity="1" />
+          <End Role="proj_info" Type="PM_FocusModel.proj_info" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="proj_status">
+              <PropertyRef Name="proj_status_id" />
+            </Principal>
+            <Dependent Role="proj_info">
+              <PropertyRef Name="proj_status_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_proj_info_project_type">
+          <End Role="proj_type" Type="PM_FocusModel.proj_type" Multiplicity="1" />
+          <End Role="proj_info" Type="PM_FocusModel.proj_info" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="proj_type">
+              <PropertyRef Name="project_type_id" />
+            </Principal>
+            <Dependent Role="proj_info">
+              <PropertyRef Name="project_type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_proj_stakeholder_proj_info">
+          <End Role="proj_info" Type="PM_FocusModel.proj_info" Multiplicity="1" />
+          <End Role="proj_stakeholder" Type="PM_FocusModel.proj_stakeholder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="proj_info">
+              <PropertyRef Name="proj_info_id" />
+            </Principal>
+            <Dependent Role="proj_stakeholder">
+              <PropertyRef Name="proj_info_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_proj_wbs_proj_info">
+          <End Role="proj_info" Type="PM_FocusModel.proj_info" Multiplicity="1" />
+          <End Role="proj_wbs" Type="PM_FocusModel.proj_wbs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="proj_info">
+              <PropertyRef Name="proj_info_id" />
+            </Principal>
+            <Dependent Role="proj_wbs">
+              <PropertyRef Name="proj_info_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_risk_register_proj_info">
+          <End Role="proj_info" Type="PM_FocusModel.proj_info" Multiplicity="1" />
+          <End Role="risk_register" Type="PM_FocusModel.risk_register" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="proj_info">
+              <PropertyRef Name="proj_info_id" />
+            </Principal>
+            <Dependent Role="risk_register">
+              <PropertyRef Name="proj_info_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_proj_stakeholder_stakeholder">
+          <End Role="stakeholder" Type="PM_FocusModel.stakeholder" Multiplicity="1" />
+          <End Role="proj_stakeholder" Type="PM_FocusModel.proj_stakeholder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="stakeholder">
+              <PropertyRef Name="stakeholder_id" />
+            </Principal>
+            <Dependent Role="proj_stakeholder">
+              <PropertyRef Name="stakeholder_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_risk_register_response_type">
+          <End Role="response_type" Type="PM_FocusModel.response_type" Multiplicity="1" />
+          <End Role="risk_register" Type="PM_FocusModel.risk_register" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="response_type">
+              <PropertyRef Name="response_type_id" />
+            </Principal>
+            <Dependent Role="risk_register">
+              <PropertyRef Name="response_type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_risk_register_risk_category">
+          <End Role="risk_category" Type="PM_FocusModel.risk_category" Multiplicity="1" />
+          <End Role="risk_register" Type="PM_FocusModel.risk_register" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="risk_category">
+              <PropertyRef Name="risk_category_id" />
+            </Principal>
+            <Dependent Role="risk_register">
+              <PropertyRef Name="risk_category_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_risk_register_risk_impact">
+          <End Role="risk_impact" Type="PM_FocusModel.risk_impact" Multiplicity="1" />
+          <End Role="risk_register" Type="PM_FocusModel.risk_register" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="risk_impact">
+              <PropertyRef Name="risk_impact_id" />
+            </Principal>
+            <Dependent Role="risk_register">
+              <PropertyRef Name="risk_impact_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_risk_register_risk_objective">
+          <End Role="risk_objective" Type="PM_FocusModel.risk_objective" Multiplicity="1" />
+          <End Role="risk_register" Type="PM_FocusModel.risk_register" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="risk_objective">
+              <PropertyRef Name="risk_objective_id" />
+            </Principal>
+            <Dependent Role="risk_register">
+              <PropertyRef Name="risk_objective_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_risk_register_risk_probability">
+          <End Role="risk_probability" Type="PM_FocusModel.risk_probability" Multiplicity="1" />
+          <End Role="risk_register" Type="PM_FocusModel.risk_register" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="risk_probability">
+              <PropertyRef Name="risk_probability_id" />
+            </Principal>
+            <Dependent Role="risk_register">
+              <PropertyRef Name="risk_probability_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_risk_register_risk_status">
+          <End Role="risk_status" Type="PM_FocusModel.risk_status" Multiplicity="1" />
+          <End Role="risk_register" Type="PM_FocusModel.risk_register" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="risk_status">
+              <PropertyRef Name="risk_status_id" />
+            </Principal>
+            <Dependent Role="risk_register">
+              <PropertyRef Name="risk_status_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EnumType Name="EscrowMethod">
+          <Member Name="Land" Value="1" />
+          <Member Name="Sea" Value="2" />
+          <Member Name="Air" Value="3" />
+          <Member Name="Transporter" Value="4" />
+        </EnumType>
+        <EntityType Name="resource_avail">
+          <Key>
+            <PropertyRef Name="resource_avail_id" />
+          </Key>
+          <Property Type="Int32" Name="resource_avail_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="unavail_start_date" Nullable="false" Precision="3" />
+          <Property Type="DateTime" Name="unavail_end_date" Nullable="false" Precision="3" />
+          <Property Type="String" Name="createdby" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="createddate" Nullable="false" Precision="3" />
+          <Property Type="Int32" Name="resource_id" Nullable="false" />
+          <NavigationProperty Name="resource" Relationship="PM_FocusModel.FK_resource_avail_resource1" FromRole="resource_avail" ToRole="resource" />
+          <Property Type="Int32" Name="unavail_type_id" Nullable="false" />
+          <NavigationProperty Name="unavail_type" Relationship="PM_FocusModel.FK_resource_avail_unavail_type" FromRole="resource_avail" ToRole="unavail_type" />
+        </EntityType>
+        <Association Name="FK_resource_avail_resource1">
+          <End Type="PM_FocusModel.resource" Role="resource" Multiplicity="1" />
+          <End Type="PM_FocusModel.resource_avail" Role="resource_avail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="resource">
+              <PropertyRef Name="resource_id" />
+            </Principal>
+            <Dependent Role="resource_avail">
+              <PropertyRef Name="resource_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="holiday_schedule">
+          <Key>
+            <PropertyRef Name="holiday_sched_id" />
+          </Key>
+          <Property Type="Int32" Name="holiday_sched_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="holiday_name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="holiday_start_date" Nullable="false" Precision="3" />
+          <Property Type="DateTime" Name="holiday_end_date" Nullable="false" Precision="3" />
+          <Property Type="String" Name="createdby" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="createddate" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="proj_log">
+          <Key>
+            <PropertyRef Name="proj_log_id" />
+          </Key>
+          <Property Type="Int32" Name="proj_log_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="proj_info_id" Nullable="false" />
+          <Property Type="Int32" Name="proj_log_code_id" Nullable="false" />
+          <Property Type="String" Name="action_from" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="action_to" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="comments" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="createdby" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="createddate" Nullable="false" Precision="3" />
+          <Property Type="DateTime" Name="action_date_from" Precision="3" />
+          <Property Type="DateTime" Name="action_date_to" Precision="3" />
+          <NavigationProperty Name="proj_info" Relationship="PM_FocusModel.FK_proj_log_proj_info" FromRole="proj_log" ToRole="proj_info" />
+          <NavigationProperty Name="proj_log_code" Relationship="PM_FocusModel.FK_proj_log_proj_log_code" FromRole="proj_log" ToRole="proj_log_code" />
+        </EntityType>
+        <EntityType Name="proj_log_code">
+          <Key>
+            <PropertyRef Name="proj_log_code_id" />
+          </Key>
+          <Property Type="Int32" Name="proj_log_code_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="proj_log_code_desc" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="is_auto" Nullable="false" />
+          <Property Type="Boolean" Name="is_comments_required" Nullable="false" />
+          <Property Type="Boolean" Name="is_active" Nullable="false" />
+          <Property Type="String" Name="createdby" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="createddate" Nullable="false" Precision="3" />
+          <NavigationProperty Name="proj_log" Relationship="PM_FocusModel.FK_proj_log_proj_log_code" FromRole="proj_log_code" ToRole="proj_log" />
+        </EntityType>
+        <EntityType Name="unavail_type">
+          <Key>
+            <PropertyRef Name="unavail_type_id" />
+          </Key>
+          <Property Type="Int32" Name="unavail_type_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="unavail_type_desc" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="createdby" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="createddate" Nullable="false" Precision="3" />
+          <NavigationProperty Name="resource_avail" Relationship="PM_FocusModel.FK_resource_avail_unavail_type" FromRole="unavail_type" ToRole="resource_avail" />
+        </EntityType>
+        <Association Name="FK_proj_log_proj_info">
+          <End Type="PM_FocusModel.proj_info" Role="proj_info" Multiplicity="1" />
+          <End Type="PM_FocusModel.proj_log" Role="proj_log" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="proj_info">
+              <PropertyRef Name="proj_info_id" />
+            </Principal>
+            <Dependent Role="proj_log">
+              <PropertyRef Name="proj_info_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_proj_log_proj_log_code">
+          <End Type="PM_FocusModel.proj_log_code" Role="proj_log_code" Multiplicity="1" />
+          <End Type="PM_FocusModel.proj_log" Role="proj_log" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="proj_log_code">
+              <PropertyRef Name="proj_log_code_id" />
+            </Principal>
+            <Dependent Role="proj_log">
+              <PropertyRef Name="proj_log_code_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_resource_avail_unavail_type">
+          <End Type="PM_FocusModel.unavail_type" Role="unavail_type" Multiplicity="1" />
+          <End Type="PM_FocusModel.resource_avail" Role="resource_avail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="unavail_type">
+              <PropertyRef Name="unavail_type_id" />
+            </Principal>
+            <Dependent Role="resource_avail">
+              <PropertyRef Name="unavail_type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="issue_severity">
+          <Key>
+            <PropertyRef Name="issue_severity_id" />
+          </Key>
+          <Property Type="Int32" Name="issue_severity_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="issue_severity_desc" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="createdby" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="createddate" Nullable="false" Precision="3" />
+          <NavigationProperty Name="proj_issues" Relationship="PM_FocusModel.FK_proj_issues_issue_severity" FromRole="issue_severity" ToRole="proj_issues" />
+        </EntityType>
+        <EntityType Name="issue_type">
+          <Key>
+            <PropertyRef Name="issue_type_id" />
+          </Key>
+          <Property Type="Int32" Name="issue_type_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="issue_type_desc" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="createdby" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="createddate" Nullable="false" Precision="3" />
+          <NavigationProperty Name="proj_issues" Relationship="PM_FocusModel.FK_proj_issues_issue_type" FromRole="issue_type" ToRole="proj_issues" />
+        </EntityType>
+        <EntityType Name="proj_issues">
+          <Key>
+            <PropertyRef Name="proj_issue_id" />
+          </Key>
+          <Property Type="Int32" Name="proj_issue_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="proj_info_id" Nullable="false" />
+          <Property Type="Int32" Name="issue_type_id" Nullable="false" />
+          <Property Type="String" Name="comments" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="createdby" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="createddate" Nullable="false" Precision="3" />
+          <Property Type="Int32" Name="issue_severity_id" Nullable="false" />
+          <NavigationProperty Name="issue_severity" Relationship="PM_FocusModel.FK_proj_issues_issue_severity" FromRole="proj_issues" ToRole="issue_severity" />
+          <NavigationProperty Name="issue_type" Relationship="PM_FocusModel.FK_proj_issues_issue_type" FromRole="proj_issues" ToRole="issue_type" />
+          <NavigationProperty Name="proj_info" Relationship="PM_FocusModel.FK_proj_issues_proj_info" FromRole="proj_issues" ToRole="proj_info" />
+        </EntityType>
+        <Association Name="FK_proj_issues_issue_severity">
+          <End Type="PM_FocusModel.issue_severity" Role="issue_severity" Multiplicity="1" />
+          <End Type="PM_FocusModel.proj_issues" Role="proj_issues" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="issue_severity">
+              <PropertyRef Name="issue_severity_id" />
+            </Principal>
+            <Dependent Role="proj_issues">
+              <PropertyRef Name="issue_severity_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_proj_issues_issue_type">
+          <End Type="PM_FocusModel.issue_type" Role="issue_type" Multiplicity="1" />
+          <End Type="PM_FocusModel.proj_issues" Role="proj_issues" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="issue_type">
+              <PropertyRef Name="issue_type_id" />
+            </Principal>
+            <Dependent Role="proj_issues">
+              <PropertyRef Name="issue_type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_proj_issues_proj_info">
+          <End Type="PM_FocusModel.proj_info" Role="proj_info" Multiplicity="1" />
+          <End Type="PM_FocusModel.proj_issues" Role="proj_issues" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="proj_info">
+              <PropertyRef Name="proj_info_id" />
+            </Principal>
+            <Dependent Role="proj_issues">
+              <PropertyRef Name="proj_info_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="search_Info">
+          <Key>
+            <PropertyRef Name="search_Info_id" />
+          </Key>
+          <Property Type="Int32" Name="search_Info_id" Nullable="false" />
+          <Property Type="String" Name="search_Name" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PM_FocusModelStoreContainer" CdmEntityContainer="PMEntities">
+          <EntitySetMapping Name="closings">
+            <EntityTypeMapping TypeName="PM_FocusModel.closing">
+              <MappingFragment StoreEntitySet="closing">
+                <ScalarProperty Name="proj_close_id" ColumnName="proj_close_id" />
+                <ScalarProperty Name="final_reports_run" ColumnName="final_reports_run" />
+                <ScalarProperty Name="product_delivered" ColumnName="product_delivered" />
+                <ScalarProperty Name="contracts_closed" ColumnName="contracts_closed" />
+                <ScalarProperty Name="project_team_released" ColumnName="project_team_released" />
+                <ScalarProperty Name="lessons_learned" ColumnName="lessons_learned" />
+                <ScalarProperty Name="proj_info_id" ColumnName="proj_info_id" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="createddate" ColumnName="createddate" />
+                <ScalarProperty Name="sponsor_approval" ColumnName="sponsor_approval" />
+                <ScalarProperty Name="notes" ColumnName="notes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="costs">
+            <EntityTypeMapping TypeName="PM_FocusModel.cost">
+              <MappingFragment StoreEntitySet="cost">
+                <ScalarProperty Name="cost_id" ColumnName="cost_id" />
+                <ScalarProperty Name="cost_name" ColumnName="cost_name" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="createddate" ColumnName="createddate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="depts">
+            <EntityTypeMapping TypeName="PM_FocusModel.dept">
+              <MappingFragment StoreEntitySet="dept">
+                <ScalarProperty Name="dept_id" ColumnName="dept_id" />
+                <ScalarProperty Name="dept_desc" ColumnName="dept_desc" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="createddate" ColumnName="createddate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="proj_activity">
+            <EntityTypeMapping TypeName="PM_FocusModel.proj_activity">
+              <MappingFragment StoreEntitySet="proj_activity">
+                <ScalarProperty Name="Duration_Days" ColumnName="Duration_Days" />
+                <ScalarProperty Name="proj_activity_id" ColumnName="proj_activity_id" />
+                <ScalarProperty Name="proj_wbs_id" ColumnName="proj_wbs_id" />
+                <ScalarProperty Name="proj_activity_desc" ColumnName="proj_activity_desc" />
+                <ScalarProperty Name="proj_activity_start_date" ColumnName="proj_activity_start_date" />
+                <ScalarProperty Name="proj_activity_end_date" ColumnName="proj_activity_end_date" />
+                <ScalarProperty Name="sequence" ColumnName="sequence" />
+                <ScalarProperty Name="predecessor" ColumnName="predecessor" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="createddate" ColumnName="createddate" />
+                <ScalarProperty Name="notes" ColumnName="notes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="proj_activity_resource">
+            <EntityTypeMapping TypeName="PM_FocusModel.proj_activity_resource">
+              <MappingFragment StoreEntitySet="proj_activity_resource">
+                <ScalarProperty Name="proj_activity_resource_id" ColumnName="proj_activity_resource_id" />
+                <ScalarProperty Name="proj_activitiy_id" ColumnName="proj_activitiy_id" />
+                <ScalarProperty Name="resource_id" ColumnName="resource_id" />
+                <ScalarProperty Name="resource_avail_pct" ColumnName="resource_avail_pct" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="createddate" ColumnName="createddate" />
+                <ScalarProperty Name="notes" ColumnName="notes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="proj_cost">
+            <EntityTypeMapping TypeName="PM_FocusModel.proj_cost">
+              <MappingFragment StoreEntitySet="proj_cost">
+                <ScalarProperty Name="proj_cost_id" ColumnName="proj_cost_id" />
+                <ScalarProperty Name="cost_id" ColumnName="cost_id" />
+                <ScalarProperty Name="proj_info_id" ColumnName="proj_info_id" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="createddate" ColumnName="createddate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="proj_info">
+            <EntityTypeMapping TypeName="PM_FocusModel.proj_info">
+              <MappingFragment StoreEntitySet="proj_info">
+                <ScalarProperty Name="doc_location" ColumnName="doc_location" />
+                <ScalarProperty Name="proj_info_id" ColumnName="proj_info_id" />
+                <ScalarProperty Name="proj_name" ColumnName="proj_name" />
+                <ScalarProperty Name="proj_mgr_id" ColumnName="proj_mgr_id" />
+                <ScalarProperty Name="proj_sponsor_id" ColumnName="proj_sponsor_id" />
+                <ScalarProperty Name="charter" ColumnName="charter" />
+                <ScalarProperty Name="scope_definition" ColumnName="scope_definition" />
+                <ScalarProperty Name="dept_id" ColumnName="dept_id" />
+                <ScalarProperty Name="client" ColumnName="client" />
+                <ScalarProperty Name="proj_start_date" ColumnName="proj_start_date" />
+                <ScalarProperty Name="proj_end_date" ColumnName="proj_end_date" />
+                <ScalarProperty Name="proj_status_id" ColumnName="proj_status_id" />
+                <ScalarProperty Name="project_type_id" ColumnName="project_type_id" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="createddate" ColumnName="createddate" />
+                <ScalarProperty Name="notes" ColumnName="notes" />
+                <ScalarProperty Name="proj_goal" ColumnName="proj_goal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="proj_mgr">
+            <EntityTypeMapping TypeName="PM_FocusModel.proj_mgr">
+              <MappingFragment StoreEntitySet="proj_mgr">
+                <ScalarProperty Name="full_name" ColumnName="full_name" />
+                <ScalarProperty Name="proj_mgr_id" ColumnName="proj_mgr_id" />
+                <ScalarProperty Name="proj_mgr_first_name" ColumnName="proj_mgr_first_name" />
+                <ScalarProperty Name="proj_mgr_last_name" ColumnName="proj_mgr_last_name" />
+                <ScalarProperty Name="proj_mgr_phone" ColumnName="proj_mgr_phone" />
+                <ScalarProperty Name="proj_mgr_gm_ext" ColumnName="proj_mgr_gm_ext" />
+                <ScalarProperty Name="proj_mgr_email" ColumnName="proj_mgr_email" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="createddate" ColumnName="createddate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="proj_sponsor">
+            <EntityTypeMapping TypeName="PM_FocusModel.proj_sponsor">
+              <MappingFragment StoreEntitySet="proj_sponsor">
+                <ScalarProperty Name="full_name" ColumnName="full_name" />
+                <ScalarProperty Name="proj_sponsor_id" ColumnName="proj_sponsor_id" />
+                <ScalarProperty Name="proj_sponsor_first_name" ColumnName="proj_sponsor_first_name" />
+                <ScalarProperty Name="proj_sponsor_last_name" ColumnName="proj_sponsor_last_name" />
+                <ScalarProperty Name="proj_sponsor_phone" ColumnName="proj_sponsor_phone" />
+                <ScalarProperty Name="proj_sponsor_gm_ext" ColumnName="proj_sponsor_gm_ext" />
+                <ScalarProperty Name="proj_sponsor_email" ColumnName="proj_sponsor_email" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="createddate" ColumnName="createddate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="proj_stakeholder">
+            <EntityTypeMapping TypeName="PM_FocusModel.proj_stakeholder">
+              <MappingFragment StoreEntitySet="proj_stakeholder">
+                <ScalarProperty Name="proj_stakeholder_id" ColumnName="proj_stakeholder_id" />
+                <ScalarProperty Name="proj_info_id" ColumnName="proj_info_id" />
+                <ScalarProperty Name="stakeholder_id" ColumnName="stakeholder_id" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="createddate" ColumnName="createddate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="proj_status">
+            <EntityTypeMapping TypeName="PM_FocusModel.proj_status">
+              <MappingFragment StoreEntitySet="proj_status">
+                <ScalarProperty Name="proj_status_id" ColumnName="proj_status_id" />
+                <ScalarProperty Name="proj_status_desc" ColumnName="proj_status_desc" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="createddate" ColumnName="createddate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="proj_type">
+            <EntityTypeMapping TypeName="PM_FocusModel.proj_type">
+              <MappingFragment StoreEntitySet="proj_type">
+                <ScalarProperty Name="project_type_id" ColumnName="project_type_id" />
+                <ScalarProperty Name="project_type_name" ColumnName="project_type_name" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="createddate" ColumnName="createddate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="proj_wbs">
+            <EntityTypeMapping TypeName="PM_FocusModel.proj_wbs">
+              <MappingFragment StoreEntitySet="proj_wbs">
+                <ScalarProperty Name="proj_wbs_id" ColumnName="proj_wbs_id" />
+                <ScalarProperty Name="proj_info_id" ColumnName="proj_info_id" />
+                <ScalarProperty Name="proj_wbs_desc" ColumnName="proj_wbs_desc" />
+                <ScalarProperty Name="proj_wbs_start_date" ColumnName="proj_wbs_start_date" />
+                <ScalarProperty Name="proj_wbs_end_date" ColumnName="proj_wbs_end_date" />
+                <ScalarProperty Name="sequence" ColumnName="sequence" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="createddate" ColumnName="createddate" />
+                <ScalarProperty Name="notes" ColumnName="notes" />
+                <ScalarProperty Name="hurdle" ColumnName="hurdle" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="resources">
+            <EntityTypeMapping TypeName="PM_FocusModel.resource">
+              <MappingFragment StoreEntitySet="resource">
+                <ScalarProperty Name="resource_full_name" ColumnName="resource_full_name" />
+                <ScalarProperty Name="resource_id" ColumnName="resource_id" />
+                <ScalarProperty Name="resource_first_name" ColumnName="resource_first_name" />
+                <ScalarProperty Name="resource_last_name" ColumnName="resource_last_name" />
+                <ScalarProperty Name="resource_phone" ColumnName="resource_phone" />
+                <ScalarProperty Name="resource_gm_ext" ColumnName="resource_gm_ext" />
+                <ScalarProperty Name="resource_email" ColumnName="resource_email" />
+                <ScalarProperty Name="notes" ColumnName="notes" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="createddate" ColumnName="createddate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="response_type">
+            <EntityTypeMapping TypeName="PM_FocusModel.response_type">
+              <MappingFragment StoreEntitySet="response_type">
+                <ScalarProperty Name="response_type_id" ColumnName="response_type_id" />
+                <ScalarProperty Name="response_type_desc" ColumnName="response_type_desc" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="createddate" ColumnName="createddate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="risk_category">
+            <EntityTypeMapping TypeName="PM_FocusModel.risk_category">
+              <MappingFragment StoreEntitySet="risk_category">
+                <ScalarProperty Name="risk_category_id" ColumnName="risk_category_id" />
+                <ScalarProperty Name="risk_category_name" ColumnName="risk_category_name" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="createddate" ColumnName="createddate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="risk_impact">
+            <EntityTypeMapping TypeName="PM_FocusModel.risk_impact">
+              <MappingFragment StoreEntitySet="risk_impact">
+                <ScalarProperty Name="risk_impact_id" ColumnName="risk_impact_id" />
+                <ScalarProperty Name="risk_impact_desc" ColumnName="risk_impact_desc" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="createddate" ColumnName="createddate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="risk_objective">
+            <EntityTypeMapping TypeName="PM_FocusModel.risk_objective">
+              <MappingFragment StoreEntitySet="risk_objective">
+                <ScalarProperty Name="risk_objective_id" ColumnName="risk_objective_id" />
+                <ScalarProperty Name="risk_objective_desc" ColumnName="risk_objective_desc" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="createddate" ColumnName="createddate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="risk_probability">
+            <EntityTypeMapping TypeName="PM_FocusModel.risk_probability">
+              <MappingFragment StoreEntitySet="risk_probability">
+                <ScalarProperty Name="risk_probability_id" ColumnName="risk_probability_id" />
+                <ScalarProperty Name="risk_probability_desc" ColumnName="risk_probability_desc" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="createddate" ColumnName="createddate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="risk_register">
+            <EntityTypeMapping TypeName="PM_FocusModel.risk_register">
+              <MappingFragment StoreEntitySet="risk_register">
+                <ScalarProperty Name="risk_reg_id" ColumnName="risk_reg_id" />
+                <ScalarProperty Name="proj_info_id" ColumnName="proj_info_id" />
+                <ScalarProperty Name="risk_status_id" ColumnName="risk_status_id" />
+                <ScalarProperty Name="risk_category_id" ColumnName="risk_category_id" />
+                <ScalarProperty Name="event" ColumnName="event" />
+                <ScalarProperty Name="cause" ColumnName="cause" />
+                <ScalarProperty Name="effect" ColumnName="effect" />
+                <ScalarProperty Name="threat_or_opportunity" ColumnName="threat_or_opportunity" />
+                <ScalarProperty Name="risk_objective_id" ColumnName="risk_objective_id" />
+                <ScalarProperty Name="risk_probability_id" ColumnName="risk_probability_id" />
+                <ScalarProperty Name="risk_impact_id" ColumnName="risk_impact_id" />
+                <ScalarProperty Name="response_action" ColumnName="response_action" />
+                <ScalarProperty Name="responsible_person" ColumnName="responsible_person" />
+                <ScalarProperty Name="interval_check" ColumnName="interval_check" />
+                <ScalarProperty Name="notes" ColumnName="notes" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="createddate" ColumnName="createddate" />
+                <ScalarProperty Name="response_type_id" ColumnName="response_type_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="risk_status">
+            <EntityTypeMapping TypeName="PM_FocusModel.risk_status">
+              <MappingFragment StoreEntitySet="risk_status">
+                <ScalarProperty Name="risk_status_id" ColumnName="risk_status_id" />
+                <ScalarProperty Name="risk_status_desc" ColumnName="risk_status_desc" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="createddate" ColumnName="createddate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="stakeholders">
+            <EntityTypeMapping TypeName="PM_FocusModel.stakeholder">
+              <MappingFragment StoreEntitySet="stakeholder">
+                <ScalarProperty Name="stakeholder_full_name" ColumnName="stakeholder_full_name" />
+                <ScalarProperty Name="stakeholder_id" ColumnName="stakeholder_id" />
+                <ScalarProperty Name="stakeholder_first_name" ColumnName="stakeholder_first_name" />
+                <ScalarProperty Name="stakeholder_last_name" ColumnName="stakeholder_last_name" />
+                <ScalarProperty Name="stakeholder_phone" ColumnName="stakeholder_phone" />
+                <ScalarProperty Name="stakeholder_gm_ext" ColumnName="stakeholder_gm_ext" />
+                <ScalarProperty Name="stakeholder_email" ColumnName="stakeholder_email" />
+                <ScalarProperty Name="notes" ColumnName="notes" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="createddate" ColumnName="createddate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="resource_avail">
+            <EntityTypeMapping TypeName="PM_FocusModel.resource_avail">
+              <MappingFragment StoreEntitySet="resource_avail">
+                <ScalarProperty Name="unavail_type_id" ColumnName="unavail_type_id" />
+                <ScalarProperty Name="resource_id" ColumnName="resource_id" />
+                <ScalarProperty Name="createddate" ColumnName="createddate" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="unavail_end_date" ColumnName="unavail_end_date" />
+                <ScalarProperty Name="unavail_start_date" ColumnName="unavail_start_date" />
+                <ScalarProperty Name="resource_avail_id" ColumnName="resource_avail_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="holiday_schedule">
+            <EntityTypeMapping TypeName="PM_FocusModel.holiday_schedule">
+              <MappingFragment StoreEntitySet="holiday_schedule">
+                <ScalarProperty Name="createddate" ColumnName="createddate" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="holiday_end_date" ColumnName="holiday_end_date" />
+                <ScalarProperty Name="holiday_start_date" ColumnName="holiday_start_date" />
+                <ScalarProperty Name="holiday_name" ColumnName="holiday_name" />
+                <ScalarProperty Name="holiday_sched_id" ColumnName="holiday_sched_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="proj_log">
+            <EntityTypeMapping TypeName="PM_FocusModel.proj_log">
+              <MappingFragment StoreEntitySet="proj_log">
+                <ScalarProperty Name="action_date_to" ColumnName="action_date_to" />
+                <ScalarProperty Name="action_date_from" ColumnName="action_date_from" />
+                <ScalarProperty Name="createddate" ColumnName="createddate" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="comments" ColumnName="comments" />
+                <ScalarProperty Name="action_to" ColumnName="action_to" />
+                <ScalarProperty Name="action_from" ColumnName="action_from" />
+                <ScalarProperty Name="proj_log_code_id" ColumnName="proj_log_code_id" />
+                <ScalarProperty Name="proj_info_id" ColumnName="proj_info_id" />
+                <ScalarProperty Name="proj_log_id" ColumnName="proj_log_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="proj_log_code">
+            <EntityTypeMapping TypeName="PM_FocusModel.proj_log_code">
+              <MappingFragment StoreEntitySet="proj_log_code">
+                <ScalarProperty Name="createddate" ColumnName="createddate" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="is_active" ColumnName="is_active" />
+                <ScalarProperty Name="is_comments_required" ColumnName="is_comments_required" />
+                <ScalarProperty Name="is_auto" ColumnName="is_auto" />
+                <ScalarProperty Name="proj_log_code_desc" ColumnName="proj_log_code_desc" />
+                <ScalarProperty Name="proj_log_code_id" ColumnName="proj_log_code_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="unavail_type">
+            <EntityTypeMapping TypeName="PM_FocusModel.unavail_type">
+              <MappingFragment StoreEntitySet="unavail_type">
+                <ScalarProperty Name="createddate" ColumnName="createddate" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="unavail_type_desc" ColumnName="unavail_type_desc" />
+                <ScalarProperty Name="unavail_type_id" ColumnName="unavail_type_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="issue_severity">
+            <EntityTypeMapping TypeName="PM_FocusModel.issue_severity">
+              <MappingFragment StoreEntitySet="issue_severity">
+                <ScalarProperty Name="createddate" ColumnName="createddate" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="issue_severity_desc" ColumnName="issue_severity_desc" />
+                <ScalarProperty Name="issue_severity_id" ColumnName="issue_severity_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="issue_type">
+            <EntityTypeMapping TypeName="PM_FocusModel.issue_type">
+              <MappingFragment StoreEntitySet="issue_type">
+                <ScalarProperty Name="createddate" ColumnName="createddate" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="issue_type_desc" ColumnName="issue_type_desc" />
+                <ScalarProperty Name="issue_type_id" ColumnName="issue_type_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="proj_issues">
+            <EntityTypeMapping TypeName="PM_FocusModel.proj_issues">
+              <MappingFragment StoreEntitySet="proj_issues">
+                <ScalarProperty Name="issue_severity_id" ColumnName="issue_severity_id" />
+                <ScalarProperty Name="createddate" ColumnName="createddate" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="comments" ColumnName="comments" />
+                <ScalarProperty Name="issue_type_id" ColumnName="issue_type_id" />
+                <ScalarProperty Name="proj_info_id" ColumnName="proj_info_id" />
+                <ScalarProperty Name="proj_issue_id" ColumnName="proj_issue_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="search_Info">
+            <EntityTypeMapping TypeName="PM_FocusModel.search_Info">
+              <MappingFragment StoreEntitySet="search_Info">
+                <ScalarProperty Name="search_Name" ColumnName="search_Name" />
+                <ScalarProperty Name="search_Info_id" ColumnName="search_Info_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

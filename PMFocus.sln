@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 2012 for Web
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PMFocus", "PMFocus\PMFocus.csproj", "{0407874E-8E21-4FF4-8842-6248DE3DDC90}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PMFocus.Tests", "PMFocus.Tests\PMFocus.Tests.csproj", "{A62A7380-2309-44EA-9588-004A29DBFC79}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectModel.DomainClasses", "ProjectModel.DomainClasses\ProjectModel.DomainClasses.csproj", "{3DED5B08-E6FD-41FB-886C-D89BC8D2FDF1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0407874E-8E21-4FF4-8842-6248DE3DDC90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0407874E-8E21-4FF4-8842-6248DE3DDC90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0407874E-8E21-4FF4-8842-6248DE3DDC90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0407874E-8E21-4FF4-8842-6248DE3DDC90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A62A7380-2309-44EA-9588-004A29DBFC79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A62A7380-2309-44EA-9588-004A29DBFC79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A62A7380-2309-44EA-9588-004A29DBFC79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A62A7380-2309-44EA-9588-004A29DBFC79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DED5B08-E6FD-41FB-886C-D89BC8D2FDF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DED5B08-E6FD-41FB-886C-D89BC8D2FDF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DED5B08-E6FD-41FB-886C-D89BC8D2FDF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DED5B08-E6FD-41FB-886C-D89BC8D2FDF1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

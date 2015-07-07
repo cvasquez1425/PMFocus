@@ -1,0 +1,45 @@
+﻿@model ProjectModel.DomainClasses.dept
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    
+    <table class="class">
+        <caption></caption>
+        <tr>
+            <td>Description:
+            </td>
+            <td class="alt">
+            @Html.EditorFor(model => model.dept_desc)
+            @Html.ValidationMessageFor(model => model.dept_desc)
+            </td>
+        </tr>
+        <tr>
+            <td>Created By:
+            </td>
+            <td class="alt">
+            @Html.EditorFor(model => model.createdby)
+            @Html.ValidationMessageFor(model => model.createdby)
+            </td>
+        </tr>
+        <tr>
+            <td>Created Date:
+            </td>
+            <td class="alt">
+            @Html.EditorFor(model => model.createddate)
+            @Html.ValidationMessageFor(model => model.createddate)
+            </td>
+        </tr>
+        <tr>
+        <tr style="text-align: center">
+            <td class="alt">
+                <input type="submit" value="Create" id="sbmCreate"/>&nbsp;&nbsp;
+            </td>
+            <td class="alt">
+                <input type="button" value="Cancel" id="btncancelDepartment" />
+            </td>
+        </tr>
+    </table>
+}
+

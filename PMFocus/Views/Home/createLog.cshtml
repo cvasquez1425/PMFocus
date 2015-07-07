@@ -1,0 +1,91 @@
+﻿@model ProjectModel.DomainClasses.proj_log
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    
+    <table class="class">
+        <caption></caption>
+        <tr>
+            <td>Project ID:
+            </td>
+            <td class="alt">
+                @Html.EditorFor(model => model.proj_info_id)
+@*                @Html.DisplayFor(model => model.proj_info_id)*@
+            </td>
+        </tr>
+        <tr>
+            <td>Project Code Description:
+            </td>
+            <td class="alt">
+                @Html.DropDownListFor(model => model.proj_log_code_id, Model.projectLogCodeItems, new { @class = "dropdownButton" })
+                @Html.ValidationMessageFor(model => model.proj_log_code_id)
+            </td>
+        </tr>
+        <tr>
+            <td>Action From:
+            </td>
+            <td class="alt">
+                @Html.EditorFor(model => model.action_from)
+                @Html.ValidationMessageFor(model => model.action_from)
+            </td>
+        </tr>
+        <tr>
+            <td>Action To:
+            </td>
+            <td class="alt">
+                @Html.EditorFor(model => model.action_to)
+                @Html.ValidationMessageFor(model => model.action_to)
+            </td>
+        </tr>
+        <tr>
+            <td>Comments:
+            </td>
+            <td class="alt">
+                @Html.TextAreaFor(model => model.comments)
+                @Html.ValidationMessageFor(model => model.comments)
+            </td>
+        </tr>
+        <tr>
+            <td>Created By:
+            </td>
+            <td class="alt">
+                @Html.EditorFor(model => model.createdby)
+                @Html.ValidationMessageFor(model => model.createdby)
+            </td>
+        </tr>
+        <tr>
+            <td>Created Date:
+            </td>
+            <td class="alt">
+                @Html.EditorFor(model => model.createddate)
+                @Html.ValidationMessageFor(model => model.createddate)
+            </td>
+        </tr>
+        <tr>
+            <td>Action Date From:
+            </td>
+            <td class="alt">
+                @Html.EditorFor(model => model.action_date_from)
+                @Html.ValidationMessageFor(model => model.action_date_from)
+            </td>
+        </tr>
+        <tr>
+            <td>Action To:
+            </td>
+            <td class="alt">
+                @Html.EditorFor(model => model.action_date_to)
+                @Html.ValidationMessageFor(model => model.action_date_to)
+            </td>
+        </tr>
+        <tr style="text-align: center">
+            <td class="alt">
+                <input type="submit" value="Create" id="sbmCreate"/>&nbsp;&nbsp;
+            </td>
+            <td class="alt">
+                <input type="button" value="Cancel" id="btncancel" />
+            </td>
+        </tr>
+    </table>
+}

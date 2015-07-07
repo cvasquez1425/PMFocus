@@ -1,0 +1,35 @@
+﻿@model IEnumerable<ProjectModel.DomainClasses.stakeholderViewModel>
+
+<div id="dialog-edit-stakeholders" style="display: none">
+</div>
+
+<p class="gridHeader">
+    Stakeholders
+</p>
+<p>
+    @Html.ActionLink("+Add New", "createStakeHolder", null, new { id = @ViewData["projectInfoID"] }, new { id = "lnkCreateStake" })
+</p>
+<div id="gridstakeholder">
+    @{
+        var grid = new WebGrid(Model, canPage: true, canSort: true, rowsPerPage:5);
+    }
+
+    @{
+        @grid.GetHtml(
+            tableStyle: "webGrid",
+            headerStyle: "header",
+            alternatingRowStyle: "alt",
+            selectedRowStyle: "select",
+            columns: grid.Columns(
+            grid.Column("_stakeholder_first_name", header: "First Name"),
+            grid.Column("_stakeholder_last_name", header: "Last Name"),
+            grid.Column("_stakeholder_phone", header: "Phone"),
+            grid.Column("_stakeholder_gm_ext", header: "Extension"),
+            grid.Column("_stakeholder_email", header: "Email Address"),
+            grid.Column("_notes", header: "Notes"),                        
+            grid.Column("_createdby", header: "Created By"),
+            grid.Column("_createddate", header: "Created Date")
+        )
+        )
+    }
+</div>

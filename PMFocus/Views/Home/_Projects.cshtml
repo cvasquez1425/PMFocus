@@ -1,0 +1,130 @@
+﻿@using System.Web.UI.WebControls
+@model ProjectModel.DomainClasses.proj_infoViewModel
+
+@{
+    var searchModel = new List<ListItem>
+        {
+            new ListItem { Value = "1", Text = "Project Name"},
+            new ListItem { Value = "2", Text = "StakeHolder"},
+            new ListItem { Value = "3", Text = "Status"},
+            new ListItem { Value = "4", Text = "Department Id"},
+        };
+}
+
+<form method="get" action="@Url.Action("UpdateProject", new { id = Model._proj_info_id })">
+<div id="projectList">
+    <table class="table" style="width: 100%" id="projectHeader">
+        <caption>
+            Project Information
+        </caption>
+        <tr>
+            <td class="left" colspan="2">
+                @Html.LabelFor(model => model._proj_name)
+            </td>
+            <td class="left">
+                @Html.LabelFor(model => model._proj_mgr_id)
+            </td>
+            <td class="left">
+                @Html.LabelFor(model => model._proj_sponsor_id)
+            </td>
+            <td class="left">
+                @Html.LabelFor(model => model._charter)
+            </td>
+            <td class="left">
+                @Html.LabelFor(model => model._scope_definition)
+            </td>
+        </tr>
+        <tr>
+            <td class="alt" colspan="2">
+                @Html.EditorFor(model => model._proj_name)
+                @Html.ValidationMessageFor(model => model._proj_name)
+            </td>
+            <td class="alt">
+                @Html.DropDownListFor(model => model._proj_mgr_id, Model.managerFullNameItems, new { @class = "dropdownButton", id = "_proj_mgr_id" })
+                @Html.ValidationMessageFor(model => model._proj_mgr_id)
+            </td>
+            <td class="alt">
+                @Html.DropDownListFor(model => model._proj_sponsor_id, Model.sponsorFullNameItems, new { @class = "dropdownButton", id = "_proj_sponsor_id" })
+                @Html.ValidationMessageFor(model => model._proj_sponsor_id)
+            </td>
+            <td class="alt">
+                @Html.EditorFor(model => model._charter)
+            </td>
+            <td class="alt">
+                @Html.EditorFor(model => model._scope_definition)
+            </td>
+        </tr>
+
+        <tr>
+            <td class="left" colspan="2">
+                @Html.LabelFor(model => model._proj_goal)
+            </td>
+            <td class="left">
+                @Html.LabelFor(model => model.proj_type_id)
+            </td>
+            <td class="left">
+                @Html.LabelFor(model => model._proj_status_id)
+            </td>
+            <td class="left">
+                @Html.LabelFor(model => model._dept_id)
+            </td>
+            <td class="left">
+                @Html.LabelFor(model => model._client)
+            </td>
+        </tr>
+        <tr>
+            <td class="alt" colspan="2">
+                @Html.EditorFor(model => model._proj_goal)
+            </td>
+            <td class="alt">
+                @Html.DropDownListFor(model => model.proj_type_id, Model.projectTypeItems, new { @class = "dropdownButton" })
+                @Html.ValidationMessageFor(model => model.proj_type_id)
+            </td>
+            <td class="alt">
+                @Html.DropDownListFor(model => model._proj_status_id, Model.statusItems, new { @class = "dropdownButton" })
+                @Html.ValidationMessageFor(model => model._proj_status_id)
+            </td>
+            <td class="alt">
+                @Html.DropDownListFor(model => model._dept_id, Model.deptItems, new { @class = "dropdownButton", id = "_dept_id" })
+                @Html.ValidationMessageFor(model => model._dept_id)
+            </td>
+            <td class="alt">
+                @Html.EditorFor(model => model._client)
+            </td>
+        </tr>
+
+
+        <tr>
+            <td class="left" colspan="2">
+                @Html.LabelFor(model => model._proj_start_date)
+            </td>
+            <td class="left">
+                @Html.LabelFor(model => model._proj_end_date)
+            </td>
+            <td class="left">
+                @Html.LabelFor(model => model._notes)
+            </td>
+            <td class="left">
+                @Html.LabelFor(model => model._doc_location)
+            </td>
+        </tr>
+        <tr>
+            <td class="alt" colspan="2">
+                @Html.EditorFor(model => model._proj_start_date)
+            </td>
+            <td class="alt">
+                @Html.EditorFor(model => model._proj_end_date)
+            </td>
+            <td class="alt">
+                @Html.EditorFor(model => model._notes)
+            </td>
+            <td class="alt">
+                @Html.EditorFor(model => model._doc_location)
+            </td>
+            <td class="alt">
+                    <input type="submit" value="Save Project" />                
+            </td>
+        </tr>
+    </table>
+</div>
+</form>

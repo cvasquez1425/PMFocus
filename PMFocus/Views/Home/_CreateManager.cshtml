@@ -1,0 +1,83 @@
+﻿@model ProjectModel.DomainClasses.proj_mgr
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    
+    <table class="class">
+        <caption></caption>
+        <tr>
+            <td>First Name:
+            </td>
+            <td class="alt">
+            @Html.EditorFor(model => model.proj_mgr_first_name)
+            @Html.ValidationMessageFor(model => model.proj_mgr_first_name)
+            </td>
+        </tr>
+        <tr>
+            <td>Last Name:
+            </td>
+            <td class="alt">
+            @Html.EditorFor(model => model.proj_mgr_last_name)
+            @Html.ValidationMessageFor(model => model.proj_mgr_last_name)
+            </td>
+        </tr>
+        <tr>
+            <td>DayTime Number:
+            </td>
+            <td class="alt">
+            @Html.EditorFor(model => model.proj_mgr_phone)
+            @Html.ValidationMessageFor(model => model.proj_mgr_phone)
+            </td>
+        </tr>
+        <tr>
+            <td>Extension:
+            </td>
+            <td class="alt">
+            @Html.EditorFor(model => model.proj_mgr_gm_ext)
+            @Html.ValidationMessageFor(model => model.proj_mgr_gm_ext)
+            </td>
+        </tr>
+        <tr>
+            <td>Email:
+            </td>
+            <td class="alt">
+            @Html.EditorFor(model => model.proj_mgr_email)
+            @Html.ValidationMessageFor(model => model.proj_mgr_email)
+            </td>
+        </tr>
+        <tr>
+            <td>Created By:
+            </td>
+            <td class="alt">
+            @Html.EditorFor(model => model.createdby)
+            @Html.ValidationMessageFor(model => model.createdby)
+            </td>
+        </tr>
+        <tr>
+            <td>Created Date:
+            </td>
+            <td class="alt">
+            @Html.EditorFor(model => model.createddate)
+            @Html.ValidationMessageFor(model => model.createddate)
+            </td>
+        </tr>
+        <tr>
+            <td>Full Name:
+            </td>
+            <td class="alt">
+            @Html.EditorFor(model => model.full_name)
+            @Html.ValidationMessageFor(model => model.full_name)
+            </td>
+        </tr>
+        <tr style="text-align: center">
+            <td class="alt">
+                <input type="submit" value="Create" id="sbmCreate"/>&nbsp;&nbsp;
+            </td>
+            <td class="alt">
+                <input type="button" value="Cancel" id="btncancelManager" />
+            </td>
+        </tr>
+    </table>
+}

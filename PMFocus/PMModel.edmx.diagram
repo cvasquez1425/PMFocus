@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9e7eac1a8dc8480291939b64371549e9" Name="Complete" ZoomLevel="70">
+        <EntityTypeShape EntityType="PM_FocusModel.closing" Width="1.5" PointX="5.25" PointY="22" IsExpanded="true" />
+        <EntityTypeShape EntityType="PM_FocusModel.cost" Width="1.5" PointX="3" PointY="17.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PM_FocusModel.dept" Width="1.5" PointX="0.75" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PM_FocusModel.proj_activity" Width="1.5" PointX="7.5" PointY="26.125" IsExpanded="true" FillColor="0, 192, 0" />
+        <EntityTypeShape EntityType="PM_FocusModel.proj_activity_resource" Width="1.875" PointX="9.75" PointY="26.5" IsExpanded="true" FillColor="0, 192, 0" />
+        <EntityTypeShape EntityType="PM_FocusModel.proj_cost" Width="1.5" PointX="5.25" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PM_FocusModel.proj_info" Width="1.5" PointX="3" PointY="9.5" IsExpanded="true" FillColor="0, 192, 0" />
+        <EntityTypeShape EntityType="PM_FocusModel.proj_mgr" Width="2" PointX="0.75" PointY="7.375" IsExpanded="true" FillColor="128, 255, 128" />
+        <EntityTypeShape EntityType="PM_FocusModel.proj_sponsor" Width="2" PointX="0.5" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PM_FocusModel.proj_stakeholder" Width="1.5" PointX="6.75" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PM_FocusModel.proj_status" Width="1.5" PointX="0.75" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="PM_FocusModel.proj_type" Width="1.5" PointX="0.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PM_FocusModel.proj_wbs" Width="1.5" PointX="5.25" PointY="26.25" IsExpanded="true" FillColor="0, 192, 0" />
+        <EntityTypeShape EntityType="PM_FocusModel.resource" Width="1.5" PointX="7.5" PointY="21.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PM_FocusModel.response_type" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PM_FocusModel.risk_category" Width="1.5" PointX="6" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="PM_FocusModel.risk_impact" Width="1.5" PointX="6" PointY="15.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PM_FocusModel.risk_objective" Width="1.5" PointX="6" PointY="18.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PM_FocusModel.risk_probability" Width="1.5" PointX="6" PointY="31" IsExpanded="true" />
+        <EntityTypeShape EntityType="PM_FocusModel.risk_register" Width="1.5" PointX="8.25" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PM_FocusModel.risk_status" Width="1.5" PointX="6" PointY="33.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PM_FocusModel.stakeholder" Width="2.125" PointX="3" PointY="5.375" IsExpanded="true" />
+        <AssociationConnector Association="PM_FocusModel.FK_closing_proj_info" ManuallyRouted="false" />
+        <AssociationConnector Association="PM_FocusModel.FK_proj_cost_cost" ManuallyRouted="false" />
+        <AssociationConnector Association="PM_FocusModel.FK_proj_info_dept" ManuallyRouted="false" />
+        <AssociationConnector Association="PM_FocusModel.FK_proj_activity_proj_wbs" ManuallyRouted="false" />
+        <AssociationConnector Association="PM_FocusModel.FK_proj_activity_resource_activity" ManuallyRouted="false" />
+        <AssociationConnector Association="PM_FocusModel.FK_proj_activity_resource_resource" ManuallyRouted="false" />
+        <AssociationConnector Association="PM_FocusModel.FK_proj_cost_proj_info" ManuallyRouted="false" />
+        <AssociationConnector Association="PM_FocusModel.FK_proj_info_proj_info" ManuallyRouted="false" />
+        <AssociationConnector Association="PM_FocusModel.FK_proj_info_proj_mgr" ManuallyRouted="false" />
+        <AssociationConnector Association="PM_FocusModel.FK_proj_info_proj_sponsor" ManuallyRouted="false" />
+        <AssociationConnector Association="PM_FocusModel.FK_proj_info_proj_status" ManuallyRouted="false" />
+        <AssociationConnector Association="PM_FocusModel.FK_proj_info_project_type" ManuallyRouted="false" />
+        <AssociationConnector Association="PM_FocusModel.FK_proj_stakeholder_proj_info" ManuallyRouted="false" />
+        <AssociationConnector Association="PM_FocusModel.FK_proj_wbs_proj_info" ManuallyRouted="false" />
+        <AssociationConnector Association="PM_FocusModel.FK_risk_register_proj_info" ManuallyRouted="false" />
+        <AssociationConnector Association="PM_FocusModel.FK_proj_stakeholder_stakeholder" ManuallyRouted="false" />
+        <AssociationConnector Association="PM_FocusModel.FK_risk_register_response_type" ManuallyRouted="false" />
+        <AssociationConnector Association="PM_FocusModel.FK_risk_register_risk_category" ManuallyRouted="false" />
+        <AssociationConnector Association="PM_FocusModel.FK_risk_register_risk_impact" ManuallyRouted="false" />
+        <AssociationConnector Association="PM_FocusModel.FK_risk_register_risk_objective" ManuallyRouted="false" />
+        <AssociationConnector Association="PM_FocusModel.FK_risk_register_risk_probability" ManuallyRouted="false" />
+        <AssociationConnector Association="PM_FocusModel.FK_risk_register_risk_status" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="PM_FocusModel.resource_avail" Width="1.5" PointX="9.75" PointY="21.75" IsExpanded="true" />
+        <AssociationConnector Association="PM_FocusModel.FK_resource_avail_resource1" />
+        <EntityTypeShape EntityType="PM_FocusModel.holiday_schedule" Width="1.5" PointX="6" PointY="36.875" />
+        <EntityTypeShape EntityType="PM_FocusModel.proj_log" Width="1.5" PointX="3.5863634196977894" PointY="16.962742262036887" />
+        <EntityTypeShape EntityType="PM_FocusModel.proj_log_code" Width="1.5" PointX="12.875" PointY="11.625" />
+        <EntityTypeShape EntityType="PM_FocusModel.unavail_type" Width="1.5" PointX="11.859317472139056" PointY="1.32230548622194" />
+        <AssociationConnector Association="PM_FocusModel.FK_proj_log_proj_info" />
+        <AssociationConnector Association="PM_FocusModel.FK_proj_log_proj_log_code" />
+        <AssociationConnector Association="PM_FocusModel.FK_resource_avail_unavail_type" />
+        <EntityTypeShape EntityType="PM_FocusModel.issue_severity" Width="1.5" PointX="18.25" PointY="39.375" />
+        <EntityTypeShape EntityType="PM_FocusModel.issue_type" Width="1.5" PointX="1.8581513417224174" PointY="28.3335061354253" />
+        <EntityTypeShape EntityType="PM_FocusModel.proj_issues" Width="1.5" PointX="4.274041701235828" PointY="25.931651500021875" />
+        <AssociationConnector Association="PM_FocusModel.FK_proj_issues_issue_severity" />
+        <AssociationConnector Association="PM_FocusModel.FK_proj_issues_issue_type" />
+        <AssociationConnector Association="PM_FocusModel.FK_proj_issues_proj_info" />
+        <EntityTypeShape EntityType="PM_FocusModel.search_Info" Width="1.5" PointX="4.7634251195767083" PointY="12.786195611947306" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

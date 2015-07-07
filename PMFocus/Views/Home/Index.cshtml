@@ -1,0 +1,64 @@
+﻿@using System.Web.UI.WebControls
+@model ProjectModel.DomainClasses.proj_infoViewModel
+
+<div id="dialog-create-project" style="display: none">
+</div>
+<div id="dialog-create-manager" style="display: none">
+</div>
+<div id="dialog-create-sponsor" style="display: none">
+</div>
+<div id="dialog-create-department" style="display: none">
+</div>
+
+@{
+    ViewBag.Title = "PMFocus";
+    var searchModel = new List<ListItem>
+        {
+            new ListItem { Value = "1", Text = "Project Name"},
+            new ListItem { Value = "2", Text = "StakeHolder"},
+            new ListItem { Value = "3", Text = "Status"},
+            new ListItem { Value = "4", Text = "Department"},
+            new ListItem { Value = "5", Text = "+Add New Project"},
+        };
+}
+
+<p id="linkCreateProject" style="display: none">
+@Html.ActionLink("+Add New", "CreateProject", null, new { id = "lnkCreateProject" })
+</p>
+
+<p id="drpDownCreateManager" style="display: none">
+@Html.ActionLink("+Add New", "CreateManager", null,  new { id = Model._proj_info_id}, new { id = "lnkCreateManager" })
+</p>
+
+<p id="drpDownCreateSponsor" style="display: none">
+@Html.ActionLink("+Add New", "CreateSponsor", null,  new { id = Model._proj_info_id}, new { id = "lnkCreateSponsor" })
+</p>
+
+<p id="drpDownCreateDepartment" style="display: none">
+@Html.ActionLink("+Add New", "CreateDepartment", null,  new { id = Model._proj_info_id}, new { id = "lnkCreateDepartment" })
+</p>
+
+<form method="get" id="searchForm">
+    <input type="search" name="searchTerm" data-pmfocus-autocompleteProjName="@Url.Action("projectSearch")" 
+                                data-pmfocus-autocompleteStatus="@Url.Action("AutoCompleteStatus")" 
+                                data-pmfocus-autocompleteDepartment="@Url.Action("AutoCompleteDepartment")"
+                                data-pmfocus-autocompleteStakeholder="@Url.Action("AutoCompleteStakeholder")"/>
+    <input type="submit" value="Search">
+    @Html.DropDownList("dropDownList", new SelectList(searchModel, "Value", "Text"), new { @class = "styled" });
+</form>
+
+<div id="projectMain">
+@*There is HTML.Partial which allows you to simplify a view and resuse HTML, and this is one way to render a partial to use this HTML.PartialHelper*@
+@Html.Partial("_Projects", Model)
+</div>
+
+<div class="container">
+<div class="box">
+@*there is HTML.Action which allows you to set up a completely independent subrequest that builds its own model and renders its own  PartialView.*@
+@Html.Action("gridListLog", "Home", new { id = Model._proj_info_id })
+</div>
+<div class="box">
+@Html.Action("gridstakeholder", "Home", new { id = Model._proj_info_id})
+</div>
+</div>
+<h3 style="font-family:verdana;color:navy;">@TempData["ConfirmationMessage"]</h3>

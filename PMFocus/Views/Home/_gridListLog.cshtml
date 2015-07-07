@@ -1,0 +1,36 @@
+﻿@model IEnumerable<ProjectModel.DomainClasses.proj_logViewModel>
+
+<div id="dialog-edit" style="display: none">
+</div>
+
+<p class="gridHeader">
+    Project Log
+</p>
+<p>
+    @Html.ActionLink("+Add New", "createLog", null, new { id = @ViewData["projectInfoID"] }, new { id = "lnkCreate" })
+</p>
+
+<div id="gridListLog">
+    @{
+        var grid = new WebGrid(Model, canPage: true, canSort: true, rowsPerPage: 5);
+    }
+
+    @{
+        @grid.GetHtml(
+            tableStyle: "webGrid",
+            headerStyle: "header",
+            alternatingRowStyle: "alt",
+            selectedRowStyle: "select",
+            columns: grid.Columns(
+            grid.Column("_proj_log_code_id", header: "Code Desc"),
+            grid.Column("_action_from", header: "Action From"),
+            grid.Column("_action_to", header: "Action To"),
+            grid.Column("_comments", header: "Comments"),
+            grid.Column("_createdby", header: "Created By"),
+            grid.Column("_createddate", header: "Created Date"),
+            grid.Column("_action_date_from", header: "Action From"),
+            grid.Column("_action_date_to", header: "Action To")
+        )
+        )
+    }
+</div>

@@ -14,7 +14,7 @@ namespace PMFocus.Controllers
     {
         private static PMEntities _ctx = new PMEntities();
 
-        // Display Stakeholder Grid View to Select Project Name Test
+        // Display Stakeholder Grid View to Select Project Name
         public ActionResult searchStakeholder(string searchTerm)
         {
             int searchterm = int.Parse(searchTerm);
